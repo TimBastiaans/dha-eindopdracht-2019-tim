@@ -95,6 +95,7 @@ export class Tab1Page implements OnInit {
         this.chosenLanguage = $event.target.value;
         console.log(this.chosenLanguage);
     }
+
     async clickTranslate() {
         this.displayText = await this.translationService.translate(this.textToTranslate, this.chosenLanguage);
     }
