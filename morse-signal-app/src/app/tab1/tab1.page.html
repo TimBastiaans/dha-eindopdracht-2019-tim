@@ -24,7 +24,7 @@
         </ion-row>
         <ion-row class="row-big">
             <ion-col>
-                <ion-textarea disabled>{{ displayTranslation }}</ion-textarea>
+                <ion-textarea disabled>{{ displayText }}</ion-textarea>
             </ion-col>
         </ion-row>
         <ion-row class="row-small">
@@ -45,16 +45,16 @@
                 </ion-button>
             </ion-col>
             <ion-col>
-                <ion-button (click)="translateTextAndFlashMorse()">Translate</ion-button>
+                <ion-button (click)="clickTranslation()">Translate</ion-button>
             </ion-col>
             <ion-col>
 
             </ion-col>
         </ion-row>
-        <ion-row>
-            <ion-col>
-                <ion-textarea disabled>{{ errorMessage }}</ion-textarea>
-            </ion-col>
-        </ion-row>
+<!--        <ion-row>-->
+<!--            <ion-col>-->
+<!--                <ion-textarea disabled>{{ errorMessage }}</ion-textarea>-->
+<!--            </ion-col>-->
+<!--        </ion-row>-->
     </ion-grid>
 </ion-content>
