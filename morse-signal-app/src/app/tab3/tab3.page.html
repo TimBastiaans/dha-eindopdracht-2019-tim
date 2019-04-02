@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title [ngStyle]="{'font-size': fontSize + 'px'}">
+      Settings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item [ngStyle]="{'font-size': fontSize + 'px'}">
+      <ion-label>Font size</ion-label>
+      <ion-button (click)="changeFontSize(18)">Small</ion-button>
+      <ion-button (click)="changeFontSize(24)">Medium</ion-button>
+      <ion-button (click)="changeFontSize(30)">Large</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Theme</ion-label>
+      <ion-button (click)="changeTheme('night')">Night</ion-button>
+      <ion-button (click)="changeTheme('day')">Day</ion-button>
+      <ion-button (click)="changeTheme('neutral')">Neutral</ion-button>
+      <ion-button (click)="changeTheme('fun')">Fun</ion-button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

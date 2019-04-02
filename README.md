@@ -1,112 +1,83 @@
-# DHA Eindopdracht app - 2019 edition
+# DHA Morse Signal App - 2019 edition
 
-## Opdrachtsomschrijving
-De eindopdracht is een vrije opdracht. Dat wil zeggen: je hebt vrijheid om zelf functionaliteit te verzinnen. Wat wel vaststaat zijn onderstaande technische requirements. Om hieraan te voldoen moet je Hiervoor zul je doorgaanswel zelf wat functionaliteiten verzinnen, zoals bijvoorbeeld welke data je in lokale opslag gaat gebruiken. De app moet uiteraard ook een hybride app zijn, en in principe met Ionic gemaakt. Deze app moet nu ook voldoen aan de Angular Styleguide.
+### Students 
+Tim Bastiaans & Wesley Andriessen
 
-### Doorwerken met app-2 of nieuwe app
-Je werkt in hetzelfde duo als voor app-2. Je mag een nieuwe opdracht maken. Maar je kunt voor deze opdracht doorwerken op je app-2 (incl. sensor afhandeling) en deze uitbreiden met wat *originele* functionaliteit.
+### Concept
+This is a simple Morse Code Signal application using the Morse Translator API from Funtranslations. (https://funtranslations.com/api/morse)
+This application is developed using Ionic and has been tested to run on Android/IOS devices and in the Google Chrome browser.
 
-Als je doorwerkt op app-2:
-- Refactor zowel bestaande code als bestands- en foldernamen waar nodig, zodat deze voldoet aan de Angular styleguide (als je een nieuwe app start kun je vanaf het begin af aan hiermee rekening houden).
-- Kopieer dan het relevante gedeelte uit die repository naar deze.
-- Verwerk dan ook gegeven feedback hierop nog.
-- Geef de interface een makeover, maak het intuitiever.
-- Wees ook niet bang functionaliteit die minder werkt te schrappen!
+### Screen sketches
+The following images show the screen designs for this application.
 
->"Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away." - Antoine de Saint-Exupery
+#### Portrait
+![Portrait](design-portrait.png)
 
-NB: Steek geen of weinig tijd in een backend, voor je eindcijfer is alleen je frontend van belang!
+#### Landscape
+![Landscape](design-landscape.png)
 
-## Normering App 3 - Eindopdracht
-Onder `1 Basiscijfer` staat een lijst van minimale vereisten voor een voldoende (6). Als je er één mist is het een knock-out. Onder `2` en `3` dan nog een lijst van punten waarmee jullie respectievelijk min- of juist pluspunten kunt halen. Je kunt minpunten compenseren met pluspunten. De docent kan een pluspunt ook deels toekennen. Een enkel missend vereist item kan evt. ook doorschuiven naar app-3, als het klein is en de app overall een voldoende indruk geeft.
+### Chosen Technical requirements
+- Ionic UI [Ionic UI componentent](https://ionicframework.com/docs/components)
+- Sensor integration: [Microphone] & [Cameraflash]
+- HTTP/API integration: [Morse Translator API] (https://funtranslations.com/api/morse)
 
-### 1. Basiscijfer 6
-Als voldaan is aan deze minimale vereisten:
+## 1. Functionalities
+The application includes the following functionalities:
 
-- [ ] 1. Tijdig aanleveren voorstel App-3 (nieuw idee of significante uitbreiding App-2)
-- [ ] 2. Kopieer deze README naar `beoordeling.md` en maak een eigen `README.md` met weer een 'how-to-run' en functioneel overzicht.
-- [ ] 3. App werkt ook in je browser (afvangen van fouten door missende native functionaliteit en tonen nette melding gebruiker)
-- [ ] 4. Ziet er overall goed uit, is responsive en crasht niet (of nauwelijks)
-- [ ] 5. Heeft - net als App 2 - *niet* de standaard naam, app icon, splash screen of bundle identifier
-- [ ] 6. De app is van jezelf, niet gekopieerd (e.g. app bevat aantal originele elementen in *1)
-- [ ] 7. Voor tenminste één platform gebouwd
-- [ ] 8. Code, folderstructuur en bestandsnamen voldoen aan *de link:https://angular.io/guide/styleguide[Angular Styleguide]*
-- [ ] 9. De app slaat zaken *(lokaal!) op* (zoals settings, laatste level, eerdere gedane input)*
-- [ ] 10. App bevat tenminste één (Angular) *custom component* (met attributen/parameters waaronder minstens 1 `@Input` en 1 `@Output`!)*
-- [ ] 11. GEEN wachtwoorden opslaan in App (als toch perse nodig is, gebruik link:https://ionicframework.com/docs/native/intel-security/[IntelSecurity] of gelijkwaardig; NIET zelf security implementeren)
-- [ ] 12. Gebruik kan op intuitieve manier invoer doen in app (bv. configuratie, sensor sensitiviteit, spelersniveau van game)
-- [ ] 13. Schrijf unit tests voor cruciale/complexere functionaliteiten in je app (minsten 4 unit tests)
-- [ ] 14. Schrijf in de README ook een reflectie op basis van de demo les (met evt. debat): Evaluatie app + hybrid vs. native*
+- Text to morse code translator.
+- Sending morse signals by using the cameraflash.
+- Speech to text input for the translator.
+- Text input for the translator.
+- Settings menu with options to change the font size and choose a different app theme.
 
-**Add 14 Evaluatie:**
-- Schrijf een korte evaluatie van je app en de nog te verbeteren punten.
-- Vermeld feedback van medestudenten uit demo en wat je hier wel of niet mee gedaan hebt (en waarom).
-- Een korte beschrijving van en reflectie op een functionaliteit in je app die wezenlijk anders te realiseren was geweest als je je app als native app had gerealiseerd (bv. makkelijker of moeilijker).
+## 2. Requirements
 
-Zet dit alles in een kopje `reflectie` in je README.md of in een apart reflectie.md bestand waarnaar je linkt uit je README. Geef ook een eigen voorkeur voor native of hybrid inclusief motivatie. Of - als je geen directe voorkeur hebt - de criteria wanneer je voor het een of ander zou kiezen. Gebruik hierbij je eigen ervaringen tijdens de MAD course.
+- [Android sdk](http://www.androiddocs.com/sdk/installing/index.html)
+- [Ionic](https://ionicframework.com/getting-started#cli)
+- [Npm](https://www.npmjs.com/get-npm)
+- Smart device or modern browser
 
-*1) De functionaliteit mag wel bestaan, maar is geen directe kopie van een bestaande appstore 'kraker', of heeft tenminste een originele twist, nieuwe doelgroep oid.
+## 3. Installation
 
-### 2. Minpunten (of knockouts)
-- [ ] M1. Te laat ingeleverd (uiterlijk) **-1**
-    - Op tijd **-0**
-    - Halve week te laat **-0.5**
-    - Week te laat **-1.0**
-    - Meer dan week te laat: **knock-out**, volgende blok inleveren
-- [ ] M2. Smelly code _max **-1_**
-    - Geen onlogische variabele namen, alles netjes in services, SOLID **-0**
-    - Veel gebruik global scope, te grote methodes, weinig SOLID **-0.5**
-    - Onlogische code, geen services, of hele grote methodes, niet SOLID **-1.0**
-    - Onbegrijpelijke of zonder begrip gecopy-paste code: **knock-out**
-- [ ] M3. Buggy max **-1**
-    - App crasht in zeldzaam geval, oorzaak is beschreven in README met link naar oorzaak/issue en niet op te lossen **-0**
-    - App crasht in zeldzaam geval, oorzaak is niet beschreven maar goede mondelinge toelichting **-0.5**
-    - App crasht af en toe om voorkombare reden of reden is niet beschreven of onderzocht **-1**
-    - App crasht structureel: **knock-out**
-- [ ] M4. Crappy layout **max -1**
-    - Een of twee onvolkomenheden **-0.25**
-    - Meer onvolkomenheden **-0.5**
-    - Geen zorg aan layout besteed **-1.0** 
-    - App is alleen usable voor developer: **knock-out**
-- [ ] M5. Onduidelijke of ontbrekende evaluatie en/of reflectie in README **max -2**
-    - Leesbare en begrijpelijke evaluatie en reflectie **-0**
-    - Geen aanpassingen gedaan zonder motivatie **-0.5**
-    - Geen of een onduidelijke of onleesbare evaluatie of reflectie geschreven **-1**
-    - Geen evaluatie en geen reflectie opgenomen **-2**
+Download the zip from Github or clone the project.
 
-### 3. Pluspunten
-Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6+4=10.
+After cloning or downloading the project run the code below in the terminal.
 
-- [ ] P1. App werkt op 2 of meer platformen via platformspecifieke code **max +0.5**
-    - Ionic doet al het werk voor je (geen platformspecifieke code) **+0**
-    - Minor tweaks mits ook enigszins functioneel toepasselijk (`platform.is`) **+0.25**
-    - Complexere en toepasselijk **+0.5**
-- [ ] P2. Multi 'form factor'/responsive design **max +0.5**
-    - Alleen meeschalen/aanpassen door gebruik Ionic componenten **+0**
-    - Serieus gebruik Ionic grid of simpele media query/JS (buiten Ionic) **+0.25**
-    - Toepasselijk tonen/verbergen elementen in landscape/portrait of tablet, retina e.d. **+0.5**
-- [ ] P3. Meerdere integraties **max +0.5**
-    - Geen extra integraties t.o.v. App-2 **+0**
-    - Simpel uitlezen, bv. simpele rest API/.json bestand **+0.25**
-    - Toepasselijk gebruik van externe API (via http) en/of wrappen van externe library in eigen service (NB code werk in eigen (backend) API's wordt NIET beloond) **+0.5**
-- [ ] P4. PWA met tenminste één PWA specifieke implementatie **max +1**
-    - Basis PWA van Ionic met triviale service worker **+0**
-    - Werkende en non standaard service worker (met bv. Google `workbox`) + 0.25
-    - Lighthouse richting 100% score en ook functioneel toepasselijke gebruik bv. push notifications +0.5 tot max **+1**
-- [ ] P5. Gebruikt meerdere sensoren op toepasselijke manier **max +0.5**
-    - Geen andere sensors dan 1e 2 in App-2 **+0**
-    - Niet zo toepasselijk gebruik van extra sensor **+0.25**
-    - Toepasselijk gebruik van sensor met custom visualisatie van opgehaalde data in app **+0.5**
-- [ ] P6. Goed en toepasselijk gebruik RxJS operators _max +0.5_
-    - Geen extra RxJS t.o.v. app-2 of enkel gebruik van `.subscribe`  of `Observable.` of niet functioneel gebruik +0
-    - Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25
-    - Verwerkt merendeel van logica binnen RxJS +0.5
-- [ ] P7. Verspreid in een AppStore / Play Store o.i.d. **max +0.5**
-    - Basic/niet te vinden **+0**
-    - Energie in promotie gestoken zoals mooie custom icon, aantrekkelijke beschrijving **+0.25**
-    - Veel energie in gestoken, promotie truc o.i.d. **+0.5**
-- [ ] P8. Vrije toevoeging (ter beoordeling docent, oftewel subjectief) **max. +1**
-    - Tsja **+0**
-    - Phat **+0.25**
-    - Phatter **+0.5**
-    - Phatst **+1.0**
+- `npm install`
+- `npm install --save ionic-native-http-connection-backend`
+- `ionic cordova plugin add cordova-plugin-advanced-http`
+- `npm install @ionic-native/http`
+- `npm install @ionic-native/speech-recognition`
+- `ionic cordova plugin add cordova-plugin-speechrecognition`
+
+To run the application in the browser run the code below in the terminal.
+
+`ionic serve --cordova --platform browser`
+
+To run the application on an android device run the code below in the terminal.
+
+`ionic cordova run android`
+
+Alternatively the Android/IOS application Devapp (https://ionicframework.com/docs/appflow/devapp/) can be used to deploy to a device. 
+To run the application on your device run the code below in the terminal.
+
+`ionic serve --devapp`
+
+### 4. checklist Grade
+Als minimaal voldaan is aan al de volgende vereisten:
+
+- [x] 1. Geef je app folder een naam volgens de [github conventie](https://stackoverflow.com/questions/11947587/is-there-a-naming-convention-for-git-repositories) (kebab case)
+- [x] 2. Zorg dat je app niet `MyApp` heet (de standaard naam)
+- [x] 3. Stel (voor i.i.g. iOS/Android) direct een goede bundle identifier in (dus *niet* `io.ionic.starter`, maar eigen reverse domain name met 3 componenten, bv: `nl.dha.mijn-naam`)
+- [x] 4. Twee (of meer) sensoren integratie (met `Promise` of `Observable` resultaat)
+- [x] 5. Haalt data op via een `http` call (bij externe service/API, of evt. lokaal .json bestand)
+- [ ] 6. Gebruikt een aantal Ionic controls/components (of controls uit andere library)
+- [x] 7. Accepteert gebruikers input (uit de UI; hier wordt dus NIET sensor input genoemd, dat valt onder 4)
+- [x] 8. Gebruik een aantal [ionicons](https://ionicons.com/) of indien gewenst een andere icon set
+- [x] 9. Visualisatie van opgehaalde data
+    - Doe dit met een control, grafiek of wellicht zelfs [SVG image](https://www.joshmorony.com/using-an-svg-for-animation-in-ionic/) of iets dergelijks
+    - Dus niet alleen een `console.log` of kale getallen tonen (maar dat is wel beste punt om te beginnen)
+- [x] 10. Maak een custom *app icon* en *splash screen* voor je app (met `[ionic resources](https://ionicframework.com/docs/cli/commands/cordova-resources)`):
+> ionic cordova resources -help
+- [x] 11. Als je sensors gebruikt die gebruikspermissie nodig hebben (zoals GPS), vraag dit dan op het goede moment (gebruiker voorbereiden, dus niet meteen, zie sheets les 5)
+- [x] 12. Splits view-logica (component) van de sensor/business/overige-logica via gebruik van (eigen) injectables/services/providers (e.g. masseer de data voor via gebruik facade pattern ;)
