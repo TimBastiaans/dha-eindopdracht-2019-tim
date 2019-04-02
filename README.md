@@ -4,7 +4,7 @@
 Tim Bastiaans & Wesley Andriessen
 
 ### Concept
-This is a translation application using the Translator APIs from Funtranslations. (https://funtranslations.com/)
+This is a translation application using the Translator APIs from Funtranslations. (https://funtranslations.com/api#)
 This application is developed using Ionic and has been tested to run on Android/IOS devices and in the Google Chrome browser.
 
 ### Screen sketches
@@ -19,7 +19,7 @@ The following images show the screen designs for this application.
 ### Chosen Technical requirements
 - Ionic UI [Ionic UI componentent](https://ionicframework.com/docs/components)
 - Sensor integration: [Microphone] & [Cameraflash]
-- HTTP/API integration: [Morse Translator API] (https://funtranslations.com/api/morse)
+- HTTP/API integration: [Funtranslations API] (https://funtranslations.com/api#)
 
 ## 1. Functionalities
 The application includes the following functionalities:
