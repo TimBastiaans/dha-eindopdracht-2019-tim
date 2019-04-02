@@ -24,16 +24,16 @@ Onder `1 Basiscijfer` staat een lijst van minimale vereisten voor een voldoende 
 Als voldaan is aan deze minimale vereisten:
 
 - [ ] 1. Tijdig aanleveren voorstel App-3 (nieuw idee of significante uitbreiding App-2)
-- [ ] 2. Kopieer deze README naar `beoordeling.md` en maak een eigen `README.md` met weer een 'how-to-run' en functioneel overzicht.
+- [x] 2. Kopieer deze README naar `beoordeling.md` en maak een eigen `README.md` met weer een 'how-to-run' en functioneel overzicht.
 - [ ] 3. App werkt ook in je browser (afvangen van fouten door missende native functionaliteit en tonen nette melding gebruiker)
 - [ ] 4. Ziet er overall goed uit, is responsive en crasht niet (of nauwelijks)
-- [ ] 5. Heeft - net als App 2 - *niet* de standaard naam, app icon, splash screen of bundle identifier
-- [ ] 6. De app is van jezelf, niet gekopieerd (e.g. app bevat aantal originele elementen in *1)
-- [ ] 7. Voor tenminste één platform gebouwd
-- [ ] 8. Code, folderstructuur en bestandsnamen voldoen aan *de link:https://angular.io/guide/styleguide[Angular Styleguide]*
-- [ ] 9. De app slaat zaken *(lokaal!) op* (zoals settings, laatste level, eerdere gedane input)*
+- [x] 5. Heeft - net als App 2 - *niet* de standaard naam, app icon, splash screen of bundle identifier
+- [x] 6. De app is van jezelf, niet gekopieerd (e.g. app bevat aantal originele elementen in *1)
+- [x] 7. Voor tenminste één platform gebouwd
+- [x] 8. Code, folderstructuur en bestandsnamen voldoen aan *de link:https://angular.io/guide/styleguide[Angular Styleguide]*
+- [x] 9. De app slaat zaken *(lokaal!) op* (zoals settings, laatste level, eerdere gedane input)*
 - [ ] 10. App bevat tenminste één (Angular) *custom component* (met attributen/parameters waaronder minstens 1 `@Input` en 1 `@Output`!)*
-- [ ] 11. GEEN wachtwoorden opslaan in App (als toch perse nodig is, gebruik link:https://ionicframework.com/docs/native/intel-security/[IntelSecurity] of gelijkwaardig; NIET zelf security implementeren)
+- [x] 11. GEEN wachtwoorden opslaan in App (als toch perse nodig is, gebruik link:https://ionicframework.com/docs/native/intel-security/[IntelSecurity] of gelijkwaardig; NIET zelf security implementeren)
 - [ ] 12. Gebruik kan op intuitieve manier invoer doen in app (bv. configuratie, sensor sensitiviteit, spelersniveau van game)
 - [ ] 13. Schrijf unit tests voor cruciale/complexere functionaliteiten in je app (minsten 4 unit tests)
 - [ ] 14. Schrijf in de README ook een reflectie op basis van de demo les (met evt. debat): Evaluatie app + hybrid vs. native*
