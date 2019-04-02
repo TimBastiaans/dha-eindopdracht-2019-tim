@@ -56,7 +56,8 @@ After cloning or downloading the project run the code below in the terminal.
 
 To run the application in the browser run the code below in the terminal.
 
-`ionic serve --cordova --platform browser`
+- `ionic cordova platform add browser`
+- `ionic serve --cordova --platform browser`
 
 To run the application on an android device run the code below in the terminal.
 
