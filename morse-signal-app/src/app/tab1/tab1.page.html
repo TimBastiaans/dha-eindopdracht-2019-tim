@@ -7,12 +7,20 @@
 </ion-header>
 
 <ion-content [ngStyle]="{'font-size': fontSize + 'px'}">
+
+    <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage" (ionChange)="onChange($event)">
+            <ion-select-option *ngFor="let lang of languages" [value]="lang">{{lang}}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
     <ion-grid>
         <ion-row class="row-small">
-        <ion-col>
-            <ion-button (click)="getStorage()">lol</ion-button>
-        </ion-col>
-    </ion-row>
+            <ion-col>
+                <ion-button (click)="getStorage()">lol</ion-button>
+            </ion-col>
+        </ion-row>
         <ion-row class="row-small">
             <ion-col>
             </ion-col>
@@ -32,11 +40,11 @@
                 <ion-label position="floating">Text to translate:</ion-label>
             </ion-col>
         </ion-row>
-      <ion-row >
-        <ion-col>
-          <ion-textarea placeholder="Enter text to translate" [(ngModel)]="textToTranslate"></ion-textarea>
-        </ion-col>
-      </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-textarea placeholder="Enter text to translate" [(ngModel)]="textToTranslate"></ion-textarea>
+            </ion-col>
+        </ion-row>
         <ion-row class="row-small">
             <ion-col></ion-col>
             <ion-col>
@@ -45,16 +53,16 @@
                 </ion-button>
             </ion-col>
             <ion-col>
-                <ion-button (click)="clickTranslation()">Translate</ion-button>
+                <ion-button (click)="clickTranslate()">Translate</ion-button>
             </ion-col>
             <ion-col>
 
             </ion-col>
         </ion-row>
-<!--        <ion-row>-->
-<!--            <ion-col>-->
-<!--                <ion-textarea disabled>{{ errorMessage }}</ion-textarea>-->
-<!--            </ion-col>-->
-<!--        </ion-row>-->
+        <!--        <ion-row>-->
+        <!--            <ion-col>-->
+        <!--                <ion-textarea disabled>{{ errorMessage }}</ion-textarea>-->
+        <!--            </ion-col>-->
+        <!--        </ion-row>-->
     </ion-grid>
 </ion-content>

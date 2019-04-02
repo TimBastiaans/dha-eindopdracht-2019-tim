@@ -24,13 +24,14 @@ export class TranslationService {
     }
 
     async translate(textToTranslate: string, chosenLanguage: string) {
-        await this.translateTextWithApi(textToTranslate, chosenLanguage);
+        await this.translateText(textToTranslate, chosenLanguage);
         return this.translation;
     }
 
-    private async translateTextWithApi(textToTranslate: string, chosenLanguage: string) {
+    private async translateText(textToTranslate: string, chosenLanguage: string) {
         await this.http
-            .post('https://api.funtranslations.com/translate/' + chosenLanguage + '.json', {'text': textToTranslate}, {})
+            .post('https://api.funtranslations.com/translate/' + chosenLanguage.toLowerCase() + '.json',
+                {'text': textToTranslate}, {})
             .then(async translation => {
                 const json = translation['data'];
                 const obj = JSON.parse(json);

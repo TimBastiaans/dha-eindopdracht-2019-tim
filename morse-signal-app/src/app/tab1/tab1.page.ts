@@ -15,6 +15,13 @@ import {TranslationService} from '../services/translation.service';
 })
 export class Tab1Page implements OnInit {
     fontSize = 16;
+    languages = ['Morse', 'Yoda', 'Pirate', 'Valspeak', 'Minion', 'Ferblatin',
+        'Piglatin', 'Dothraki', 'Valyrian', 'Sindarin', 'Quenya', 'Orcish',
+        'Sith', 'Cheunh', 'Gungan', 'Mandalorian', 'Huttese', 'Chef', 'Catalan',
+        'Oldenglish', 'Shakespeare', 'Vulcan', 'Klingon', 'Romulan', 'Dovahzul',
+        'Thuum', 'Aldmeris', 'Groot', 'Jive', 'Dolan', 'Fudd', 'Cockney', 'Us2uk',
+        'Uk2us', 'Leetspeak', 'Brooklyn', 'Ermahgerd', 'Australian', 'Boston',
+        'Austrian', 'Article_rewrite'];
 
     private _translation: Promise<string>;
     private _textToTranslate: string;
@@ -84,8 +91,11 @@ export class Tab1Page implements OnInit {
             );
     }
 
-    async clickTranslation() {
-        this.chosenLanguage = 'yoda'; // TODO get language from dropdown field in app
+    onChange($event) {
+        this.chosenLanguage = $event.target.value;
+        console.log(this.chosenLanguage);
+    }
+    async clickTranslate() {
         this.displayText = await this.translationService.translate(this.textToTranslate, this.chosenLanguage);
     }
 
