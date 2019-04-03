@@ -135,7 +135,6 @@ export class Tab1Page implements OnInit {
         this.speechRecognition.startListening()
             .subscribe(
                 (matches: Array<string>) => {
-                    console.log(matches);
                     this.textToTranslate = matches[0];
                 }
             );
@@ -143,7 +142,6 @@ export class Tab1Page implements OnInit {
 
     onChange($event) {
         this.chosenLanguage = $event.target.value;
-        console.log(this.chosenLanguage);
     }
 
     async clickTranslate() {

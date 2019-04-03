@@ -28,7 +28,7 @@ export class TranslationService {
         return this.translation;
     }
 
-    private async translateText(textToTranslate: string, chosenLanguage: string) {
+    async translateText(textToTranslate: string, chosenLanguage: string) {
         await this.http
             .post('https://api.funtranslations.com/translate/' + chosenLanguage.toLowerCase() + '.json',
                 {'text': textToTranslate}, {})
@@ -37,7 +37,7 @@ export class TranslationService {
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                    await this.flash();
+                    await this.flash(this.translation);
                 }
             })
             .catch(errorMessage => {
@@ -47,8 +47,8 @@ export class TranslationService {
             });
     }
 
-    private flash() {
-        const wordList = this.translation.split('     ');
+    flash(morse: string) {
+        const wordList = morse.split('     ');
         for (const word of wordList) {
             for (const character of word) {
                 this.flashTimer(this.morseUnitInterval);
@@ -74,7 +74,7 @@ export class TranslationService {
         this.flashlight.switchOff();
     }
 
-    private flashTimer(intervalTime: number) {
+    flashTimer(intervalTime: number) {
         const start = new Date().getTime();
         for (let i = 0; i < 1e7; i++) {
             if ((new Date().getTime() - start) > intervalTime) {
