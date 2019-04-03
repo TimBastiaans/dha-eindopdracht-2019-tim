@@ -3,8 +3,6 @@
   overflow: hidden;
 }
 
-
-
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
   ion-grid {
@@ -35,6 +33,10 @@
       height: 100%;
     }
   }
+}
+
+.errorMessage{
+  color:red;
 }
 
 ion-button {

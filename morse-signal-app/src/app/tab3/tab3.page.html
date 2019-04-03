@@ -10,7 +10,7 @@
   <ion-grid>
     <ion-list>
       <ion-row>
-        <ion-col sizeXs="12" sizeLg="8">
+        <ion-col sizeXs="12" sizeLg="6" pushLg="3">
           <ion-item>
             <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Font size</ion-label>
             <ion-button (click)="changeFontSize(fontSize - 1)">
@@ -26,7 +26,7 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col sizeXs="12" sizeLg="8">
+        <ion-col sizeXs="12" sizeLg="6" pushLg="3">
           <ion-item [ngStyle]="{'font-size': fontSize + 'px'}">
             <ion-label>Theme</ion-label>
             <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('night')">Night</ion-button>
@@ -37,5 +37,10 @@
         </ion-col>
       </ion-row>
     </ion-list>
+    <ion-row>
+      <ion-col sizeXs="12" sizeLg="6" pushLg="3">
+        <ion-textarea class="errorMessage">{{ errorMessage }}</ion-textarea>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
