@@ -118,12 +118,12 @@ export class Tab1Page implements OnInit {
             );
     }
 
-    getStorage() {
-        this.nativeStorage.setItem('theme', {themeName: 'night'})
-            .then(
-                () => this.theme.setTheme('night'),
-                error => console.error('Error storing theme', error)
-            );
+    historyList() {
+
+    }
+
+    scanningText() {
+
     }
 }
 
