@@ -10,7 +10,8 @@
 
     <ion-item>
         <ion-label>Language</ion-label>
-        <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage" (ionChange)="onChange($event)">
+        <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage"
+                    (ionChange)="onChange($event)">
             <ion-select-option *ngFor="let lang of languages" [value]="lang">{{lang}}</ion-select-option>
         </ion-select>
     </ion-item>
@@ -42,27 +43,29 @@
         </ion-row>
         <ion-row>
             <ion-col>
-                <ion-textarea placeholder="Enter text to translate" [(ngModel)]="textToTranslate"></ion-textarea>
+                <ion-textarea placeholder="Enter text to translate" [(ngModel)]="textToTranslate">
+                    <img [src]="selectedImage" *ngIf="selectedImage" alt="">
+                </ion-textarea>
             </ion-col>
         </ion-row>
         <ion-row class="row-small">
-            <ion-col></ion-col>
             <ion-col>
                 <ion-button (click)="speechOn()">
                     <ion-icon name="mic"></ion-icon>
                 </ion-button>
             </ion-col>
             <ion-col>
+                <ion-button (click)="cameraOn()">
+                    <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                </ion-button>
+            </ion-col>
+            <ion-col>
                 <ion-button (click)="clickTranslate()">Translate</ion-button>
             </ion-col>
             <ion-col>
-
+               <ion-button (click)="recognizeImage()" [disabled]="!selectedImage">Get Text from image</ion-button>
             </ion-col>
         </ion-row>
-        <!--        <ion-row>-->
-        <!--            <ion-col>-->
-        <!--                <ion-textarea disabled>{{ errorMessage }}</ion-textarea>-->
-        <!--            </ion-col>-->
-        <!--        </ion-row>-->
+
     </ion-grid>
 </ion-content>

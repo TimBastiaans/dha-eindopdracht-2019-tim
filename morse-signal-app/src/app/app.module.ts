@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {ThemeService} from './services/theme.service';
 import {DataService} from './services/data.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
+import {Camera, CameraOptions, PictureSourceType} from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import {NativeStorage} from '@ionic-native/native-storage/ngx';
     ThemeService,
     DataService,
     NativeStorage,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    Camera,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent]
 })
