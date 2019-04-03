@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {ThemeService} from './services/theme.service';
 import {DataService} from './services/data.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
+import {ScreenOrientation} from '@ionic-native/screen-orientation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import {NativeStorage} from '@ionic-native/native-storage/ngx';
     ThemeService,
     DataService,
     NativeStorage,
+    ScreenOrientation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

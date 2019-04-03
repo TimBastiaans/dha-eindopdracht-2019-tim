@@ -118,12 +118,12 @@ export class Tab1Page implements OnInit {
             );
     }
 
-    historyList() {
-
-    }
-
-    scanningText() {
-
+    protected adjustTextarea(event: any): void {
+        const textarea: any		= event.target;
+        textarea.style.overflow = 'hidden';
+        textarea.style.height 	= 'auto';
+        textarea.style.height 	= textarea.scrollHeight + 'px';
+        return;
     }
 }
 
