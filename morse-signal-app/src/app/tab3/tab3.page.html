@@ -7,21 +7,35 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item [ngStyle]="{'font-size': fontSize + 'px'}">
-      <ion-label>Font size</ion-label>
-      <ion-button (click)="changeFontSize(18)">Small</ion-button>
-      <ion-button (click)="changeFontSize(24)">Medium</ion-button>
-      <ion-button (click)="changeFontSize(30)">Large</ion-button>
-    </ion-item>
-
-    <ion-item>
-      <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Theme</ion-label>
-      <ion-button (click)="changeTheme('night')">Night</ion-button>
-      <ion-button (click)="changeTheme('day')">Day</ion-button>
-      <ion-button (click)="changeTheme('neutral')">Neutral</ion-button>
-      <ion-button (click)="changeTheme('fun')">Fun</ion-button>
-    </ion-item>
-
-  </ion-list>
+  <ion-grid>
+    <ion-list>
+      <ion-row>
+        <ion-col sizeXs="12" sizeLg="8">
+          <ion-item>
+            <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Font size</ion-label>
+            <ion-button (click)="changeFontSize(fontSize - 1)">
+              <ion-icon [ngStyle]="{'font-size': fontSize/2 + 'px'}" name="remove"></ion-icon>
+            </ion-button>
+            <ion-button (click)="changeFontSize(fontSize + 1)">
+              <ion-icon [ngStyle]="{'font-size': fontSize/2 + 'px'}" name="add"></ion-icon>
+            </ion-button>
+            <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeFontSize(16)">Small</ion-button>
+            <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeFontSize(24)">Medium</ion-button>
+            <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeFontSize(30)">Large</ion-button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col sizeXs="12" sizeLg="8">
+          <ion-item [ngStyle]="{'font-size': fontSize + 'px'}">
+            <ion-label>Theme</ion-label>
+            <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('night')">Night</ion-button>
+            <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('day')">Day</ion-button>
+            <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('neutral')">Neutral</ion-button>
+            <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('fun')">Fun</ion-button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
 </ion-content>

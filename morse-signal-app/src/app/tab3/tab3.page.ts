@@ -12,7 +12,7 @@ import {NativeStorage} from '@ionic-native/native-storage/ngx';
 
 
 export class Tab3Page {
-    fontSize = 24;
+    fontSize = 16;
 
     constructor(private data: DataService, private theme: ThemeService, private nativeStorage: NativeStorage) {
         this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);

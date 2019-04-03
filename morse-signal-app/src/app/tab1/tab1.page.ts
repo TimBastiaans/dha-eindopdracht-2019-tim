@@ -114,7 +114,10 @@ export class Tab1Page implements OnInit {
                     this.data.changeFontSize(data.fontSize);
                     this.fontSize = data.fontSize;
                 },
-                error => console.error(error)
+                error => {
+                    console.error(error);
+                    this.data.changeFontSize(16);
+                }
             );
     }
 
