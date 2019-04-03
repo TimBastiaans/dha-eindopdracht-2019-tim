@@ -17,7 +17,7 @@ import {ActionSheetController, Platform} from '@ionic/angular';
     styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
-    selectedImage: string;
+    selectedImage;
     fontSize = 16;
     languages = ['Morse', 'Yoda', 'Pirate', 'Valspeak', 'Minion', 'Ferblatin',
         'Piglatin', 'Dothraki', 'Valyrian', 'Sindarin', 'Quenya', 'Orcish',
@@ -126,11 +126,8 @@ export class Tab1Page implements OnInit {
 
     recognizeImage() {
         Tesseract.recognize(this.selectedImage)
-            .catch(err => alert(err))
-            .then(result => {
-                this.textToTranslate = result.text;
-                alert(this.textToTranslate);
-            })
+            .catch(error => alert(error))
+            .then(result => this.textToTranslate = result.text)
             .finally(resultOrError => alert(resultOrError));
     }
 
