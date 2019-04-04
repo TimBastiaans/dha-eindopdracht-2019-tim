@@ -32,7 +32,7 @@ export class Tab1Page implements OnInit {
     private _textToTranslate: string;
     private _chosenLanguage: string;
     private _displayText: string;
-    private errorMessage: string[];
+    errorMessage: string[];
 
 
     get textToTranslate(): string {
@@ -79,13 +79,12 @@ export class Tab1Page implements OnInit {
                 public platform: Platform,
                 private errorService: ErrorService
     ) {
-        this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
-        this.errorService.currentErrors.subscribe(fontSize => this.errorMessage = fontSize);
     }
 
     ngOnInit() {
         this.setSettings();
         this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
+        this.errorService.currentErrors.subscribe(error => this.errorMessage = error);
     }
 
     private askSpeechPermission() {
@@ -95,7 +94,7 @@ export class Tab1Page implements OnInit {
                     this.speechRecognition.requestPermission()
                         .then(
                             () => console.log('Granted'),
-                            () => console.log('Denied')
+                            () => this.errorService.addError('No permission granted on microphone')
                         );
                 }
             });
@@ -116,7 +115,7 @@ export class Tab1Page implements OnInit {
     }
 
     async clickTranslate() {
-        this.displayText = await this.translationService.translate(this.textToTranslate, this.chosenLanguage);
+        this.displayText = await this.translationService.translate(this.textToTranslate, this.chosenLanguage)
     }
 
     setSettings() {
@@ -124,15 +123,18 @@ export class Tab1Page implements OnInit {
             .then(data => {
                     this.theme.setTheme(data.themeName);
                 },
-                error => console.log(error));
+                () => {
+                    this.errorService.addError('No preferred theme found!');
+                });
+
         this.nativeStorage.getItem('fontSize')
             .then(
                 data => {
                     this.data.changeFontSize(data.fontSize);
                     this.fontSize = data.fontSize;
                 },
-                error => {
-                    console.error(error);
+                () => {
+                    this.errorService.addError('No preferred fontsize found!');
                     this.data.changeFontSize(16);
                 }
             );

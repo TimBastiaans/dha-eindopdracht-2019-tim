@@ -49,10 +49,16 @@
         </ion-col>
       </ion-row>
     </ion-list>
-    <ion-row>
-      <ion-col sizeXs="12" sizeLg="6" pushLg="3">
-        <ion-textarea class="errorMessage">{{ errorMessage }}</ion-textarea>
-      </ion-col>
-    </ion-row>
+    <ion-list *ngIf="errorMessage.length > 1">
+      <ion-row *ngFor=" let error of errorMessage; let i = index ">
+        <ion-col no-padding sizeXs="12" sizeLg="6" pushLg="3">
+          <ion-item color="danger" *ngIf="i >= 1">
+            <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">
+              {{ error }}
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
   </ion-grid>
 </ion-content>

@@ -43,19 +43,25 @@
         </ion-row>
         <br>
         <ion-row>
-            <ion-col sizeXs="2" sizeMd="1"  sizeLg="2" pushMd="2" pushLg="1">
+            <ion-col sizeXs="2" sizeMd="1" sizeLg="2" pushXs="1" pushMd="3" pushLg="2">
                 <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="speechOn()">
                     <ion-icon name="mic"></ion-icon>
                 </ion-button>
             </ion-col>
-            <ion-col sizeXs="4" sizeMd="2" sizeLg="3" pushMd="2" pushLg="1">
+            <ion-col sizeXs="5" sizeMd="4" sizeLg="3" pushXs="1" pushMd="3" pushLg="2">
                 <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="clickTranslate()">Translate</ion-button>
             </ion-col>
         </ion-row>
-<!--                <ion-row>-->
-<!--                    <ion-col>-->
-<!--                        <ion-textarea class="errorMessage" disabled>{{ errorMessage }}</ion-textarea>-->
-<!--                    </ion-col>-->
-<!--                </ion-row>-->
+        <ion-list *ngIf="errorMessage.length > 1">
+            <ion-row *ngFor=" let error of errorMessage; let i = index ">
+                <ion-col>
+                    <ion-item color="danger" *ngIf="i >= 1">
+                        <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">
+                            {{ error }}
+                        </ion-label>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-list>
     </ion-grid>
 </ion-content>
