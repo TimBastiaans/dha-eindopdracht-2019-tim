@@ -85,7 +85,6 @@
     <plugin name="cordova-plugin-flashlight" spec="3.2.0" />
     <plugin name="cordova-plugin-nativestorage" spec="2.3.2" />
     <plugin name="cordova-plugin-advanced-http" spec="2.0.6" />
-    <plugin name="cordova-plugin-speechrecognition" spec="1.2.0" />
     <plugin name="cordova-plugin-camera" spec="4.0.3" />
     <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
         <string>We need images for OCR</string>
@@ -95,4 +94,5 @@
     <engine name="android" spec="7.1.4" />
     <engine name="ios" spec="4.5.5" />
     <plugin name="cordova-plugin-screen-orientation" spec="3.0.1" />
+    <plugin name="cordova-plugin-speechrecognition" spec="1.2.0" />
 </widget>
