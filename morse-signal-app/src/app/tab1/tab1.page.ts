@@ -7,6 +7,7 @@ import {DataService} from '../services/data.service';
 import {ThemeService} from '../services/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {TranslationService} from '../services/translation.service';
+import {catchError} from "rxjs/operators";
 
 @Component({
     selector: 'app-tab1',
@@ -68,6 +69,10 @@ export class Tab1Page implements OnInit {
 
     ngOnInit() {
         this.setSettings();
+        this.setFontSize();
+    }
+
+    private setFontSize() {
         this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
     }
 
