@@ -1,4 +1,4 @@
-/* tslint:disable:no-trailing-whitespace */
+/* tslint:disable:no-trailing-whitespace prefer-const */
 import { TestBed } from '@angular/core/testing';
 import { ThemeService } from './theme.service';
 import { DOCUMENT } from '@angular/common';
@@ -7,11 +7,9 @@ import * as Color from 'color';
 describe('ThemeService', () => {
   let service;
   let document;
-  let color;
+  let color: Color;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    color = Color;
     document = DOCUMENT;
     service = new ThemeService(document);
     } );

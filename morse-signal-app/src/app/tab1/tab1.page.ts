@@ -64,12 +64,14 @@ export class Tab1Page implements OnInit {
     constructor(private speechRecognition: SpeechRecognition, private flashlight: Flashlight,
                 public http: HTTP, private data: DataService, private theme: ThemeService,
                 private nativeStorage: NativeStorage, private translationService: TranslationService) {
-        this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
     }
 
     ngOnInit() {
         this.setSettings();
+        this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
+    }
 
+    private askSpeechPermission() {
         this.speechRecognition.hasPermission()
             .then((hasPermission: boolean) => {
                 if (!hasPermission) {
@@ -83,6 +85,7 @@ export class Tab1Page implements OnInit {
     }
 
     speechOn() {
+        this.askSpeechPermission();
         this.speechRecognition.startListening()
             .subscribe(
                 (matches: Array<string>) => {

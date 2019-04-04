@@ -90,9 +90,9 @@
         <string>We need images for OCR</string>
     </edit-config>
     <plugin name="cordova-plugin-screen-orientation" spec="3.0.1" />
+    <plugin name="cordova-plugin-screen-orientation" spec="3.0.1" />
+    <plugin name="cordova-plugin-speechrecognition" spec="1.2.0" />
     <engine name="browser" spec="5.0.4" />
     <engine name="android" spec="7.1.4" />
     <engine name="ios" spec="4.5.5" />
-    <plugin name="cordova-plugin-screen-orientation" spec="3.0.1" />
-    <plugin name="cordova-plugin-speechrecognition" spec="1.2.0" />
 </widget>
