@@ -39,16 +39,18 @@
         </ion-row>
         <ion-row>
             <ion-col sizeXs="11">
-                <ion-textarea no-padding type="text" placeholder="Enter text to translate" [(ngModel)]="textToTranslate" (input)="adjustTextarea($event);"></ion-textarea>
+                <ion-textarea no-padding="" placeholder="Enter text to translate" (input)="adjustTextarea($event)" [(ngModel)]="textToTranslate">
+                    <img [src]="selectedImage" *ngIf="selectedImage" alt="">
+                </ion-textarea>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col sizeXs="2" sizeMd="1"  sizeLg="2" pushMd="2" pushLg="1">
-                <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="speechOn()">
+                <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="cameraOn()">
                     <ion-icon name="camera"></ion-icon>
                 </ion-button>
             </ion-col>
-            <ion-col sizeXs="2" sizeMd="1" pushMd="2" sizeLg="2"  pushLg="1">
+            <ion-col sizeXs="2" sizeMd="1"  sizeLg="2" pushMd="2" pushLg="1">
                 <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="speechOn()">
                     <ion-icon name="mic"></ion-icon>
                 </ion-button>
@@ -57,6 +59,15 @@
                 <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="clickTranslate()">Translate</ion-button>
             </ion-col>
         </ion-row>
+        <ion-row class="row-small">
+            <ion-col sizeXs="6" sizeMd="4" sizeLg="3" pushXs="2" pushMd="3" pushLg="4">
+                <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="recognizeImage()" [disabled]="!selectedImage">
+                    Get Text from image
+                    <ion-icon name="image"> </ion-icon>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+
                 <ion-row>
                     <ion-col>
                         <ion-textarea class="errorMessage" disabled>{{ errorMessage }}</ion-textarea>

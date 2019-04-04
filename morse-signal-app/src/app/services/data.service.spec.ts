@@ -1,12 +1,24 @@
+/* tslint:disable:prefer-const no-trailing-whitespace */
 import { TestBed } from '@angular/core/testing';
-
-import { DataService } from './data.service';
+import {DataService} from './data.service';
 
 describe('DataService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = DataService;
+  });
+
 
   it('should be created', () => {
-    const service: DataService = TestBed.get(DataService);
+    service = TestBed.get(DataService);
     expect(service).toBeTruthy();
   });
+
+  it('should run #changeFontSize()', async () => {
+     const result = service.changeFontSize(16);
+  });
+
 });
+

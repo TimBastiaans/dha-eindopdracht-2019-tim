@@ -7,6 +7,9 @@ import {DataService} from '../services/data.service';
 import {ThemeService} from '../services/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {TranslationService} from '../services/translation.service';
+import {Camera, PictureSourceType} from '@ionic-native/camera/ngx';
+import * as Tesseract from 'tesseract.js';
+import {ActionSheetController, Platform} from '@ionic/angular';
 
 @Component({
     selector: 'app-tab1',
@@ -14,6 +17,7 @@ import {TranslationService} from '../services/translation.service';
     styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
+    selectedImage;
     fontSize = 16;
     languages = ['Morse', 'Yoda', 'Pirate', 'Valspeak', 'Minion', 'Ferblatin',
         'Piglatin', 'Dothraki', 'Valyrian', 'Sindarin', 'Quenya', 'Orcish',
@@ -62,7 +66,9 @@ export class Tab1Page implements OnInit {
 
     constructor(private speechRecognition: SpeechRecognition, private flashlight: Flashlight,
                 public http: HTTP, private data: DataService, private theme: ThemeService,
-                private nativeStorage: NativeStorage, private translationService: TranslationService) {
+                private nativeStorage: NativeStorage, private translationService: TranslationService,
+                private camera: Camera, private actionSheetCtrl: ActionSheetController,
+                public platform: Platform) {
         this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
     }
 
@@ -81,11 +87,54 @@ export class Tab1Page implements OnInit {
             });
     }
 
+    async cameraOn() {
+        const actionSheet = await this.actionSheetCtrl.create({
+            header: 'Select Source',
+            buttons: [{
+                text: 'Capture Image',
+                role: 'camera',
+                icon: 'camera',
+                handler: () => {
+                    return this.getPicture(this.camera.PictureSourceType.CAMERA);
+                }
+            }, {
+                text: 'Use Libary',
+                role: 'libary',
+                icon: 'folder-open',
+                handler: () => {
+                    return this.getPicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+                }
+            }, {
+                text: 'Cancel',
+                role: 'cancel',
+            }]
+        });
+        await actionSheet.present();
+    }
+
+    getPicture(sourceType: PictureSourceType) {
+        this.camera.getPicture({
+            quality: 100,
+            destinationType: this.camera.DestinationType.DATA_URL,
+            sourceType: sourceType,
+            allowEdit: true,
+            saveToPhotoAlbum: false,
+            correctOrientation: true
+        }).then((imageData) => this.selectedImage = `data:image/jpeg;base64,${imageData}`)
+            .catch(err => alert(err));
+    }
+
+    recognizeImage() {
+        Tesseract.recognize(this.selectedImage)
+            .catch(error => alert(error))
+            .then(result => this.textToTranslate = result.text)
+            .finally(resultOrError => alert(resultOrError));
+    }
+
     speechOn() {
         this.speechRecognition.startListening()
             .subscribe(
                 (matches: Array<string>) => {
-                    console.log(matches);
                     this.textToTranslate = matches[0];
                 }
             );
@@ -93,7 +142,6 @@ export class Tab1Page implements OnInit {
 
     onChange($event) {
         this.chosenLanguage = $event.target.value;
-        console.log(this.chosenLanguage);
     }
 
     async clickTranslate() {
@@ -102,12 +150,10 @@ export class Tab1Page implements OnInit {
 
     setSettings() {
         this.nativeStorage.getItem('theme')
-            .then(
-                data => {
+            .then(data => {
                     this.theme.setTheme(data.themeName);
                 },
-                error => console.log(error)
-            );
+                error => console.log(error));
         this.nativeStorage.getItem('fontSize')
             .then(
                 data => {
