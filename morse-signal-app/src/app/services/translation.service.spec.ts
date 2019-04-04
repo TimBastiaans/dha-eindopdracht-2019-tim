@@ -18,18 +18,28 @@ describe('TranslationService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('should return an error', () => {
+    it('should catch on #translate()', () => {
         spyOn(service.translate('a', 'morse'), 'catch');
         service.translate('a', '12345');
         expect(service.translate('a', 'morse').catch);
     });
 
+    it('should catch on #translateText()', async () => {
+        spyOn(service.translateText('a', 'morse'), 'catch');
+        service.translateText('a', '12345');
+        expect(service.translateText('a', 'morse').catch());
+    });
+
     it('should run #translate()', async () => {
-        const result = service.translateText('a', 'morse');
+        spyOn(service.translate('a', 'morse'), 'catch');
+        service.translate('a', 'morse');
+        expect(service.translate('a', 'morse'));
     });
 
     it('should run #translateText()', async () => {
-        const result = service.translateText('a', 'morse');
+        spyOn(service.translateText('a', 'morse'), 'catch');
+        service.translateText('a', 'morse');
+        expect(service.translateText('a', 'morse'));
     });
 
 });

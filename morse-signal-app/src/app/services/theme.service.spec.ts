@@ -19,12 +19,4 @@ describe('ThemeService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should run #contrast()', async () => {
-    const result = service.contrast('#3880ff');
-  });
-
-  it('should run #CSSTextGenerator()', async () => {
-    const result = service.CSSTextGenerator('#3880ff');
-  });
-
 });

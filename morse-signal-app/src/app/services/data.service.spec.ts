@@ -13,6 +13,5 @@ describe('DataService', () => {
         service = TestBed.get(DataService);
         expect(service).toBeTruthy();
     });
-
 });
 

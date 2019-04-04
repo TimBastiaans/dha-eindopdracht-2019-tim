@@ -7,6 +7,7 @@ import {DataService} from '../services/data.service';
 import {ThemeService} from '../services/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {TranslationService} from '../services/translation.service';
+import {catchError} from "rxjs/operators";
 import {Camera, PictureSourceType} from '@ionic-native/camera/ngx';
 import * as Tesseract from 'tesseract.js';
 import {ActionSheetController, Platform} from '@ionic/angular';
@@ -83,6 +84,10 @@ export class Tab1Page implements OnInit {
 
     ngOnInit() {
         this.setSettings();
+        this.setFontSize();
+    }
+
+    private setFontSize() {
         this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
         this.errorService.currentErrors.subscribe(error => this.errorMessage = error);
     }
