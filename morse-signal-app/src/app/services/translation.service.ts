@@ -43,7 +43,7 @@ export class TranslationService {
             .catch(errorMessage => {
                 const json = errorMessage['error'];
                 const obj = JSON.parse(json);
-                alert(errorMessage);
+                alert(obj);
             });
     }
 

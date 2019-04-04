@@ -10,11 +10,7 @@ This application is developed using Ionic and has been tested to run on Android/
 ### Screen sketches
 The following images show the screen designs for this application.
 
-#### Portrait
-![Portrait](design-portrait.png)
-
-#### Landscape
-![Landscape](design-landscape.png)
+![Design](design-portrait.png)
 
 ### Chosen Technical requirements
 - Ionic UI [Ionic UI componentent](https://ionicframework.com/docs/components)
@@ -24,15 +20,13 @@ The following images show the screen designs for this application.
 ## 1. Functionalities
 The application includes the following functionalities:
 
-- Text translator for the following 'languages':
-    - Morse code
-    - Elvish (The Lord of the Rings)
-    - Klingon (Star Trek)
-    -
+- Text translator for the languages available at https://funtranslations.com/api#:
 - Sending morse signals by using the cameraflash when translating morse code.
 - Speech to text input for the translator.
 - Text input for the translator.
-- Settings menu with options to change the font size and choose a different app theme.
+- Settings menu with option to change the font size
+- Settings menu with option to choose a different app theme.
+- Storage to remember your chosen theme.
 
 ## 2. Requirements
 
@@ -50,8 +44,6 @@ After cloning or downloading the project run the code below in the terminal.
 - `npm install`
 - `npm install --save ionic-native-http-connection-backend`
 - `ionic cordova plugin add cordova-plugin-advanced-http`
-- `npm install @ionic-native/http`
-- `npm install @ionic-native/speech-recognition`
 - `ionic cordova plugin add cordova-plugin-speechrecognition`
 
 To run the application in the browser run the code below in the terminal.

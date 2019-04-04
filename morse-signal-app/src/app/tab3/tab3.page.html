@@ -12,7 +12,13 @@
       <ion-row>
         <ion-col sizeXs="12" sizeLg="6" pushLg="3">
           <ion-item>
-            <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Font size</ion-label>
+            <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Font size:</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col sizeXs="12" sizeLg="6" pushLg="3">
+          <ion-item>
             <ion-button (click)="changeFontSize(fontSize - 1)">
               <ion-icon [ngStyle]="{'font-size': fontSize/2 + 'px'}" name="remove"></ion-icon>
             </ion-button>
@@ -28,7 +34,13 @@
       <ion-row>
         <ion-col sizeXs="12" sizeLg="6" pushLg="3">
           <ion-item [ngStyle]="{'font-size': fontSize + 'px'}">
-            <ion-label>Theme</ion-label>
+            <ion-label>Theme:</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col sizeXs="12" sizeLg="6" pushLg="3">
+          <ion-item [ngStyle]="{'font-size': fontSize + 'px'}">
             <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('night')">Night</ion-button>
             <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('day')">Day</ion-button>
             <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeTheme('neutral')">Neutral</ion-button>

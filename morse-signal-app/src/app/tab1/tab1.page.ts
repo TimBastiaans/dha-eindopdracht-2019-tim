@@ -85,7 +85,10 @@ export class Tab1Page implements OnInit {
 
     ngOnInit() {
         this.setSettings();
+        this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
+    }
 
+    private askSpeechPermission() {
         this.speechRecognition.hasPermission()
             .then((hasPermission: boolean) => {
                 if (!hasPermission) {
@@ -98,51 +101,8 @@ export class Tab1Page implements OnInit {
             });
     }
 
-    async cameraOn() {
-        const actionSheet = await this.actionSheetCtrl.create({
-            header: 'Select Source',
-            buttons: [{
-                text: 'Capture Image',
-                role: 'camera',
-                icon: 'camera',
-                handler: () => {
-                    return this.getPicture(this.camera.PictureSourceType.CAMERA);
-                }
-            }, {
-                text: 'Use Libary',
-                role: 'libary',
-                icon: 'folder-open',
-                handler: () => {
-                    return this.getPicture(this.camera.PictureSourceType.PHOTOLIBRARY);
-                }
-            }, {
-                text: 'Cancel',
-                role: 'cancel',
-            }]
-        });
-        await actionSheet.present();
-    }
-
-    getPicture(sourceType: PictureSourceType) {
-        this.camera.getPicture({
-            quality: 100,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            sourceType: sourceType,
-            allowEdit: true,
-            saveToPhotoAlbum: false,
-            correctOrientation: true
-        }).then((imageData) => this.selectedImage = `data:image/jpeg;base64,${imageData}`)
-            .catch(err => alert(err));
-    }
-
-    recognizeImage() {
-        Tesseract.recognize(this.selectedImage)
-            .catch(error => alert(error))
-            .then(result => this.textToTranslate = result.text)
-            .finally(resultOrError => alert(resultOrError));
-    }
-
     speechOn() {
+        this.askSpeechPermission();
         this.speechRecognition.startListening()
             .subscribe(
                 (matches: Array<string>) => {
