@@ -22,6 +22,7 @@
     "@angular/router": "^7.2.2",
     "@ionic-native/camera": "^5.3.0",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/diagnostic": "^5.3.0",
     "@ionic-native/flashlight": "^5.2.0",
     "@ionic-native/http": "^5.2.0",
     "@ionic-native/native-storage": "^5.3.0",
@@ -100,7 +101,8 @@
       "cordova-plugin-speechrecognition": {},
       "cordova-plugin-nativestorage": {},
       "cordova-plugin-camera": {},
-      "cordova-plugin-screen-orientation": {}
+      "cordova-plugin-screen-orientation": {},
+      "cordova.plugins.diagnostic": {}
     },
     "platforms": [
       "browser",

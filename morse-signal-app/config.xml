@@ -95,4 +95,5 @@
     <engine name="android" spec="7.1.4" />
     <engine name="ios" spec="4.5.5" />
     <plugin name="cordova-plugin-screen-orientation" spec="3.0.1" />
+    <plugin name="cordova.plugins.diagnostic" spec="~4.0.12" />
 </widget>

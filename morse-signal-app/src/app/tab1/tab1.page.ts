@@ -10,6 +10,7 @@ import {TranslationService} from '../services/translation.service';
 import {Camera, PictureSourceType} from '@ionic-native/camera/ngx';
 import * as Tesseract from 'tesseract.js';
 import {ActionSheetController, Platform} from '@ionic/angular';
+import {ErrorService} from '../services/error.service';
 
 @Component({
     selector: 'app-tab1',
@@ -31,6 +32,8 @@ export class Tab1Page implements OnInit {
     private _textToTranslate: string;
     private _chosenLanguage: string;
     private _displayText: string;
+    private errorMessage: string[];
+
 
     get textToTranslate(): string {
         return this._textToTranslate;
@@ -64,12 +67,20 @@ export class Tab1Page implements OnInit {
         this._displayText = value;
     }
 
-    constructor(private speechRecognition: SpeechRecognition, private flashlight: Flashlight,
-                public http: HTTP, private data: DataService, private theme: ThemeService,
-                private nativeStorage: NativeStorage, private translationService: TranslationService,
-                private camera: Camera, private actionSheetCtrl: ActionSheetController,
-                public platform: Platform) {
+    constructor(private speechRecognition: SpeechRecognition,
+                private flashlight: Flashlight,
+                private http: HTTP,
+                private data: DataService,
+                private theme: ThemeService,
+                private nativeStorage: NativeStorage,
+                private translationService: TranslationService,
+                private camera: Camera,
+                private actionSheetCtrl: ActionSheetController,
+                public platform: Platform,
+                private errorService: ErrorService
+    ) {
         this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
+        this.errorService.currentErrors.subscribe(fontSize => this.errorMessage = fontSize);
     }
 
     ngOnInit() {
