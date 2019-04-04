@@ -9,3 +9,11 @@ ion-item {
 .errorMessage{
   color:red;
 }
+
+@media screen and (min-width: 992px) {
+  font-size: 24px;
+}
+
+@media screen and (min-width: 1800px) {
+  font-size: 30px;
+}
