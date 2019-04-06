@@ -10,7 +10,7 @@ This application is developed using Ionic and has been tested to run on Android/
 ### Screen sketches
 The following images show the screen designs for this application.
 
-![Design](design-portrait.png)
+![Design](design.png)
 
 ### Chosen Technical requirements
 - Ionic UI [Ionic UI componentent](https://ionicframework.com/docs/components)
