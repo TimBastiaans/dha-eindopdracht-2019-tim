@@ -30,6 +30,7 @@
                 <ion-textarea disabled (input)="adjustTextarea($event)">{{ displayText }}</ion-textarea>
             </ion-col>
         </ion-row>
+        <br>
         <ion-row class="row-small">
             <ion-col sizeXs="12">
                 <ion-label position="floating">Text to translate:</ion-label>
@@ -37,9 +38,8 @@
         </ion-row>
         <ion-row>
             <ion-col sizeXs="11">
-                <ion-textarea no-padding="" placeholder="Enter text to translate" (input)="adjustTextarea($event)"
+                <ion-textarea placeholder="Enter text to translate" (input)="adjustTextarea($event)"
                               [(ngModel)]="textToTranslate">
-                    <img [src]="selectedImage" *ngIf="selectedImage" alt="">
                 </ion-textarea>
             </ion-col>
         </ion-row>

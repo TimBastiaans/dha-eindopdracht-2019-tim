@@ -7,7 +7,6 @@ import {DataService} from '../services/data.service';
 import {ThemeService} from '../services/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {TranslationService} from '../services/translation.service';
-import {ActionSheetController, LoadingController, Platform} from '@ionic/angular';
 import {ErrorService} from '../services/error.service';
 
 @Component({
@@ -80,10 +79,9 @@ export class Tab1Page implements OnInit {
         this._displayText = value;
     }
 
-    constructor(private speechRecognition: SpeechRecognition,  private flashlight: Flashlight, private http: HTTP,
+    constructor(private speechRecognition: SpeechRecognition, private flashlight: Flashlight, private http: HTTP,
                 private data: DataService, private theme: ThemeService, private nativeStorage: NativeStorage,
-                private translationService: TranslationService, private errorService: ErrorService
-    ) {
+                private translationService: TranslationService, private errorService: ErrorService) {
     }
 
     ngOnInit() {
