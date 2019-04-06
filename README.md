@@ -103,7 +103,7 @@ Als voldaan is aan deze minimale vereisten:
 ### Minpunten (of knockouts)
 - [ ] M1. Te laat ingeleverd (uiterlijk) **-1**
     - Op tijd **-0**
-   x- Halve week te laat **-0.5**
+    - X Halve week te laat **-0.5**
     - Week te laat **-1.0**
     - Meer dan week te laat: **knock-out**, volgende blok inleveren
 - [ ] M2. Smelly code _max **-1_**
@@ -117,7 +117,7 @@ Als voldaan is aan deze minimale vereisten:
     - App crasht af en toe om voorkombare reden of reden is niet beschreven of onderzocht **-1**
     - App crasht structureel: **knock-out**
 - [ ] M4. Crappy layout **max -1**
-   X - Een of twee onvolkomenheden **-0.25**
+    - X Een of twee onvolkomenheden **-0.25**
     - Meer onvolkomenheden **-0.5**
     - Geen zorg aan layout besteed **-1.0** 
     - App is alleen usable voor developer: **knock-out**
@@ -131,7 +131,7 @@ Als voldaan is aan deze minimale vereisten:
 Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6+4=10.
 
 - [ ] P1. App werkt op 2 of meer platformen via platformspecifieke code **max +0.5**
-   x - Ionic doet al het werk voor je (geen platformspecifieke code) **+0**
+    - X Ionic doet al het werk voor je (geen platformspecifieke code) **+0**
     - Minor tweaks mits ook enigszins functioneel toepasselijk (`platform.is`) **+0.25**
     - Complexere en toepasselijk **+0.5**
 - [ ] P2. Multi 'form factor'/responsive design **max +0.5**
@@ -140,22 +140,22 @@ Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6
     - Toepasselijk tonen/verbergen elementen in landscape/portrait of tablet, retina e.d. **+0.5**
 - [ ] P3. Meerdere integraties **max +0.5**
     - Geen extra integraties t.o.v. App-2 **+0**
-   x - Simpel uitlezen, bv. simpele rest API/.json bestand **+0.25**
+    - X Simpel uitlezen, bv. simpele rest API/.json bestand **+0.25**
     - Toepasselijk gebruik van externe API (via http) en/of wrappen van externe library in eigen service (NB code werk in eigen (backend) API's wordt NIET beloond) **+0.5**
 - [ ] P4. PWA met tenminste één PWA specifieke implementatie **max +1**
     - Basis PWA van Ionic met triviale service worker **+0**
     - Werkende en non standaard service worker (met bv. Google `workbox`) + 0.25
     - Lighthouse richting 100% score en ook functioneel toepasselijke gebruik bv. push notifications +0.5 tot max **+1**
 - [ ] P5. Gebruikt meerdere sensoren op toepasselijke manier **max +0.5**
-   x - Geen andere sensors dan 1e 2 in App-2 **+0**
+    - X Geen andere sensors dan 1e 2 in App-2 **+0**
     - Niet zo toepasselijk gebruik van extra sensor **+0.25**
     - Toepasselijk gebruik van sensor met custom visualisatie van opgehaalde data in app **+0.5**
 - [ ] P6. Goed en toepasselijk gebruik RxJS operators _max +0.5_
     - Geen extra RxJS t.o.v. app-2 of enkel gebruik van `.subscribe`  of `Observable.` of niet functioneel gebruik +0
-   X - Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25
+    - X Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25
     - Verwerkt merendeel van logica binnen RxJS +0.5
 - [ ] P7. Verspreid in een AppStore / Play Store o.i.d. **max +0.5**
-   x - Basic/niet te vinden **+0**
+    - X Basic/niet te vinden **+0**
     - Energie in promotie gestoken zoals mooie custom icon, aantrekkelijke beschrijving **+0.25**
     - Veel energie in gestoken, promotie truc o.i.d. **+0.5**
 - [ ] P8. Vrije toevoeging (ter beoordeling docent, oftewel subjectief) **max. +1**
