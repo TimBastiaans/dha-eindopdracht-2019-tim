@@ -7,10 +7,7 @@ import {DataService} from '../services/data.service';
 import {ThemeService} from '../services/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {TranslationService} from '../services/translation.service';
-import {catchError} from "rxjs/operators";
-import {Camera, PictureSourceType} from '@ionic-native/camera/ngx';
-import * as Tesseract from 'tesseract.js';
-import {ActionSheetController, Platform} from '@ionic/angular';
+import {ActionSheetController, LoadingController, Platform} from '@ionic/angular';
 import {ErrorService} from '../services/error.service';
 
 @Component({
@@ -19,22 +16,37 @@ import {ErrorService} from '../services/error.service';
     styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
-    selectedImage;
-    fontSize = 16;
-    languages = ['Morse', 'Yoda', 'Pirate', 'Valspeak', 'Minion', 'Ferblatin',
-        'Piglatin', 'Dothraki', 'Valyrian', 'Sindarin', 'Quenya', 'Orcish',
-        'Sith', 'Cheunh', 'Gungan', 'Mandalorian', 'Huttese', 'Chef', 'Catalan',
-        'Oldenglish', 'Shakespeare', 'Vulcan', 'Klingon', 'Romulan', 'Dovahzul',
-        'Thuum', 'Aldmeris', 'Groot', 'Jive', 'Dolan', 'Fudd', 'Cockney', 'Us2uk',
-        'Uk2us', 'Leetspeak', 'Brooklyn', 'Ermahgerd', 'Australian', 'Boston',
-        'Austrian', 'Article_rewrite'];
-
+    private _fontSize: number;
+    private _languages: string[];
     private _translation: Promise<string>;
     private _textToTranslate: string;
     private _chosenLanguage: string;
     private _displayText: string;
-    errorMessage: string[];
+    private _errorMessage: string[];
 
+    get errorMessage(): string[] {
+        return this._errorMessage;
+    }
+
+    set errorMessage(value: string[]) {
+        this._errorMessage = value;
+    }
+
+    get fontSize(): number {
+        return this._fontSize;
+    }
+
+    set fontSize(value: number) {
+        this._fontSize = value;
+    }
+
+    get languages(): string[] {
+        return this._languages;
+    }
+
+    set languages(value: string[]) {
+        this._languages = value;
+    }
 
     get textToTranslate(): string {
         return this._textToTranslate;
@@ -68,23 +80,23 @@ export class Tab1Page implements OnInit {
         this._displayText = value;
     }
 
-    constructor(private speechRecognition: SpeechRecognition,
-                private flashlight: Flashlight,
-                private http: HTTP,
-                private data: DataService,
-                private theme: ThemeService,
-                private nativeStorage: NativeStorage,
-                private translationService: TranslationService,
-                private camera: Camera,
-                private actionSheetCtrl: ActionSheetController,
-                public platform: Platform,
-                private errorService: ErrorService
+    constructor(private speechRecognition: SpeechRecognition,  private flashlight: Flashlight, private http: HTTP,
+                private data: DataService, private theme: ThemeService, private nativeStorage: NativeStorage,
+                private translationService: TranslationService, private errorService: ErrorService
     ) {
     }
 
     ngOnInit() {
+        this.fontSize = 16;
         this.setSettings();
         this.setFontSize();
+        this.languages = ['Morse', 'Yoda', 'Pirate', 'Valspeak', 'Minion', 'Ferblatin',
+            'Piglatin', 'Dothraki', 'Valyrian', 'Sindarin', 'Quenya', 'Orcish',
+            'Sith', 'Cheunh', 'Gungan', 'Mandalorian', 'Huttese', 'Chef', 'Catalan',
+            'Oldenglish', 'Shakespeare', 'Vulcan', 'Klingon', 'Romulan', 'Dovahzul',
+            'Thuum', 'Aldmeris', 'Groot', 'Jive', 'Dolan', 'Fudd', 'Cockney', 'Us2uk',
+            'Uk2us', 'Leetspeak', 'Brooklyn', 'Ermahgerd', 'Australian', 'Boston',
+            'Austrian', 'Article_rewrite'];
     }
 
     private setFontSize() {
@@ -120,7 +132,7 @@ export class Tab1Page implements OnInit {
     }
 
     async clickTranslate() {
-        this.displayText = await this.translationService.translate(this.textToTranslate, this.chosenLanguage)
+        this.displayText = await this.translationService.translate(this.textToTranslate, this.chosenLanguage);
     }
 
     setSettings() {
@@ -146,10 +158,10 @@ export class Tab1Page implements OnInit {
     }
 
     protected adjustTextarea(event: any): void {
-        const textarea: any		= event.target;
+        const textarea: any = event.target;
         textarea.style.overflow = 'hidden';
-        textarea.style.height 	= 'auto';
-        textarea.style.height 	= textarea.scrollHeight + 'px';
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
         return;
     }
 }

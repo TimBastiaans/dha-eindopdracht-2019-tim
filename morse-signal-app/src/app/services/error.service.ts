@@ -9,7 +9,6 @@ export class ErrorService {
   private errorSource = new BehaviorSubject<string[]>(['']);
   currentErrors = this.errorSource.asObservable();
 
-
   constructor() { }
 
   addError(error: string) {

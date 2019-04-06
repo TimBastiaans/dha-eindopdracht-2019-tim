@@ -2,6 +2,7 @@
 import {Injectable} from '@angular/core';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
+import {ErrorService} from "./error.service";
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +21,7 @@ export class TranslationService {
         this._translation = value;
     }
 
-    constructor(private flashlight: Flashlight, public http: HTTP) {
+    constructor(private flashlight: Flashlight, public http: HTTP, private errorService: ErrorService) {
     }
 
     async translate(textToTranslate: string, chosenLanguage: string) {
@@ -43,7 +44,7 @@ export class TranslationService {
             .catch(errorMessage => {
                 const json = errorMessage['error'];
                 const obj = JSON.parse(json);
-                alert(obj);
+                this.errorService.addError(obj);
             });
     }
 

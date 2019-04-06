@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import {ThemeService} from './services/theme.service';
 import {DataService} from './services/data.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
-import {Camera, CameraOptions, PictureSourceType} from '@ionic-native/camera/ngx';
 import {ScreenOrientation} from '@ionic-native/screen-orientation/ngx';
 
 @NgModule({
@@ -26,7 +25,6 @@ import {ScreenOrientation} from '@ionic-native/screen-orientation/ngx';
     DataService,
     NativeStorage,
     ScreenOrientation,
-    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
