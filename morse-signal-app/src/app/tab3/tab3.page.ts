@@ -11,7 +11,6 @@ import {ErrorService} from '../services/error.service';
     styleUrls: ['tab3.page.scss']
 })
 
-
 export class Tab3Page {
     fontSize = 16;
     errorMessage: string[];
@@ -46,7 +45,7 @@ export class Tab3Page {
         this.nativeStorage.setItem('theme', {themeName: themeName})
             .then(
                 () => console.log('Font-size Stored'),
-                error => this.errorService.addError('Error storing fontSize')
+                () => this.errorService.addError('Error storing fontSize')
             );
     }
 }

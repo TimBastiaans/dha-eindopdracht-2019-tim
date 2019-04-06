@@ -12,7 +12,8 @@
             <ion-col>
                 <ion-item>
                     <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Language</ion-label>
-                    <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage" (ionChange)="onChange($event)">
+                    <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage"
+                                (ionChange)="onChange($event)">
                         <ion-select-option *ngFor="let lang of languages" [value]="lang">{{lang}}</ion-select-option>
                     </ion-select>
                 </ion-item>
@@ -36,20 +37,22 @@
         </ion-row>
         <ion-row>
             <ion-col sizeXs="11">
-                <ion-textarea no-padding="" placeholder="Enter text to translate" (input)="adjustTextarea($event)" [(ngModel)]="textToTranslate">
+                <ion-textarea no-padding="" placeholder="Enter text to translate" (input)="adjustTextarea($event)"
+                              [(ngModel)]="textToTranslate">
                     <img [src]="selectedImage" *ngIf="selectedImage" alt="">
                 </ion-textarea>
             </ion-col>
         </ion-row>
         <br>
         <ion-row>
-            <ion-col sizeXs="2" sizeMd="1" sizeLg="2" pushXs="1" pushMd="3" pushLg="2">
+            <ion-col sizeXs="4.5" sizeMd="1" sizeLg="2" pushMd="3" pushLg="1">
                 <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="speechOn()">
                     <ion-icon name="mic"></ion-icon>
                 </ion-button>
             </ion-col>
-            <ion-col sizeXs="5" sizeMd="4" sizeLg="3" pushXs="1" pushMd="3" pushLg="2">
-                <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="clickTranslate()">Translate</ion-button>
+            <ion-col sizeXs="4.5" sizeMd="2" sizeLg="3" pushMd="3" pushLg="1">
+                <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="clickTranslate()">Translate
+                </ion-button>
             </ion-col>
         </ion-row>
         <ion-list *ngIf="errorMessage.length > 1">
