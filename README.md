@@ -80,14 +80,14 @@ De voorkeur van Wesley voor het maken van apps valt op hybrid apps. Je verliest 
 
 ## 5. Beoordeling/Evaluatie
 
-Cijfer volgens eigen beoordeling: 5.75
+Cijfer volgens eigen beoordeling: 6.25
 
 ### Basiscijfer 6
 Als voldaan is aan deze minimale vereisten:
 
 - [x] 1. Tijdig aanleveren voorstel App-3 (nieuw idee of significante uitbreiding App-2)
 - [x] 2. Kopieer deze README naar `beoordeling.md` en maak een eigen `README.md` met weer een 'how-to-run' en functioneel overzicht.
-- [ ] 3. App werkt ook in je browser (afvangen van fouten door missende native functionaliteit en tonen nette melding gebruiker)
+- [x] 3. App werkt ook in je browser (afvangen van fouten door missende native functionaliteit en tonen nette melding gebruiker)
 - [x] 4. Ziet er overall goed uit, is responsive en crasht niet (of nauwelijks)
 - [x] 5. Heeft - net als App 2 - *niet* de standaard naam, app icon, splash screen of bundle identifier
 - [x] 6. De app is van jezelf, niet gekopieerd (e.g. app bevat aantal originele elementen in *1)
@@ -101,14 +101,14 @@ Als voldaan is aan deze minimale vereisten:
 - [x] 14. Schrijf in de README ook een reflectie op basis van de demo les (met evt. debat): Evaluatie app + hybrid vs. native*
 
 ### Minpunten (of knockouts)
-- [ ] M1. Te laat ingeleverd (uiterlijk) **-1**
+- [x] M1. Te laat ingeleverd (uiterlijk) **-1**
     - Op tijd **-0**
-    - X Halve week te laat **-0.5**
+    - X Halve week te laat **-0.5** (In weekend doorgewerkt)
     - Week te laat **-1.0**
     - Meer dan week te laat: **knock-out**, volgende blok inleveren
 - [ ] M2. Smelly code _max **-1_**
-    - Geen onlogische variabele namen, alles netjes in services, SOLID **-0**
-    - Veel gebruik global scope, te grote methodes, weinig SOLID **-0.5**
+    - X Geen onlogische variabele namen, alles netjes in services, SOLID **-0**
+    - Veel gebruik global scope, te grote methodes, weinig SOLID **-0.5** 
     - Onlogische code, geen services, of hele grote methodes, niet SOLID **-1.0**
     - Onbegrijpelijke of zonder begrip gecopy-paste code: **knock-out**
 - [ ] M3. Buggy max **-1**
@@ -116,8 +116,8 @@ Als voldaan is aan deze minimale vereisten:
     - App crasht in zeldzaam geval, oorzaak is niet beschreven maar goede mondelinge toelichting **-0.5**
     - App crasht af en toe om voorkombare reden of reden is niet beschreven of onderzocht **-1**
     - App crasht structureel: **knock-out**
-- [ ] M4. Crappy layout **max -1**
-    - X Een of twee onvolkomenheden **-0.25**
+- [x] M4. Crappy layout **max -1**
+    - X Een of twee onvolkomenheden **-0.25** 
     - Meer onvolkomenheden **-0.5**
     - Geen zorg aan layout besteed **-1.0** 
     - App is alleen usable voor developer: **knock-out**
@@ -130,15 +130,15 @@ Als voldaan is aan deze minimale vereisten:
 ### Pluspunten
 Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6+4=10.
 
-- [ ] P1. App werkt op 2 of meer platformen via platformspecifieke code **max +0.5**
-    - X Ionic doet al het werk voor je (geen platformspecifieke code) **+0**
-    - Minor tweaks mits ook enigszins functioneel toepasselijk (`platform.is`) **+0.25**
+- [x] P1. App werkt op 2 of meer platformen via platformspecifieke code **max +0.5**
+    - Ionic doet al het werk voor je (geen platformspecifieke code) **+0**
+    - X Minor tweaks mits ook enigszins functioneel toepasselijk (`platform.is`) **+0.25** (bij screenorientation en flash platform.is gebruikt)
     - Complexere en toepasselijk **+0.5**
-- [ ] P2. Multi 'form factor'/responsive design **max +0.5**
+- [x] P2. Multi 'form factor'/responsive design **max +0.5**
     - Alleen meeschalen/aanpassen door gebruik Ionic componenten **+0**
-    - Serieus gebruik Ionic grid of simpele media query/JS (buiten Ionic) **+0.25**
+    - x Serieus gebruik Ionic grid of simpele media query/JS (buiten Ionic) **+0.25** (in tab1 css zijn paar media queries gebruikt)
     - Toepasselijk tonen/verbergen elementen in landscape/portrait of tablet, retina e.d. **+0.5**
-- [ ] P3. Meerdere integraties **max +0.5**
+- [x] P3. Meerdere integraties **max +0.5**
     - Geen extra integraties t.o.v. App-2 **+0**
     - X Simpel uitlezen, bv. simpele rest API/.json bestand **+0.25**
     - Toepasselijk gebruik van externe API (via http) en/of wrappen van externe library in eigen service (NB code werk in eigen (backend) API's wordt NIET beloond) **+0.5**
@@ -150,7 +150,7 @@ Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6
     - X Geen andere sensors dan 1e 2 in App-2 **+0**
     - Niet zo toepasselijk gebruik van extra sensor **+0.25**
     - Toepasselijk gebruik van sensor met custom visualisatie van opgehaalde data in app **+0.5**
-- [ ] P6. Goed en toepasselijk gebruik RxJS operators _max +0.5_
+- [x] P6. Goed en toepasselijk gebruik RxJS operators _max +0.5_
     - Geen extra RxJS t.o.v. app-2 of enkel gebruik van `.subscribe`  of `Observable.` of niet functioneel gebruik +0
     - X Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25
     - Verwerkt merendeel van logica binnen RxJS +0.5
