@@ -49,19 +49,6 @@
         </ion-col>
       </ion-row>
     </ion-list>
-    <ion-list *ngIf="errorMessage.length > 1">
-      <ion-row *ngFor=" let error of errorMessage; let i = index ">
-        <ion-col no-padding sizeXs="12" sizeLg="6" pushLg="3">
-          <ion-item color="danger" *ngIf="i >= 1">
-            <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">
-              {{ error }}
-              <ion-button (click)="removeError(error)" color="danger" [ngStyle]="{'font-size': fontSize + 'px'}" class="removeButton">
-                -
-              </ion-button>
-            </ion-label>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-list>
+    <app-error-handler></app-error-handler>
   </ion-grid>
 </ion-content>

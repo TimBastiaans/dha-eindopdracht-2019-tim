@@ -9,7 +9,7 @@
 <ion-content [ngStyle]="{'font-size': fontSize + 'px'}">
     <ion-grid>
         <ion-row class="row-small">
-            <ion-col>
+            <ion-col sizeXs="12" sizeLg="6" pushLg="3">
                 <ion-item>
                     <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Language</ion-label>
                     <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage"
@@ -21,50 +21,40 @@
         </ion-row>
         <br>
         <ion-row class="row-small">
-            <ion-col>
+            <ion-col sizeXs="12" sizeLg="6" pushLg="3">
                 <ion-label>Translation:</ion-label>
             </ion-col>
         </ion-row>
         <ion-row class="row-big">
-            <ion-col sizeXs="11">
-                <ion-textarea disabled (input)="adjustTextarea($event)">{{ displayText }}</ion-textarea>
+            <ion-col sizeXs="11" sizeLg="6" pushLg="3">
+                <ion-textarea no-padding disabled (input)="adjustTextarea($event)">{{ displayText }}</ion-textarea>
             </ion-col>
         </ion-row>
         <br>
         <ion-row class="row-small">
-            <ion-col sizeXs="12">
+            <ion-col sizeXs="12" sizeLg="6" pushLg="3">
                 <ion-label position="floating">Text to translate:</ion-label>
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col sizeXs="11">
-                <ion-textarea placeholder="Enter text to translate" (input)="adjustTextarea($event)"
+            <ion-col sizeXs="11" sizeLg="6" pushLg="3">
+                <ion-textarea no-padding placeholder="Enter text to translate" (input)="adjustTextarea($event)"
                               [(ngModel)]="textToTranslate">
                 </ion-textarea>
             </ion-col>
         </ion-row>
         <br>
         <ion-row>
-            <ion-col sizeXs="4.5" sizeMd="1" sizeLg="2" pushMd="3" pushLg="1">
+            <ion-col sizeXs="3" sizeMd="1" sizeLg="1" pushXs="2" pushMd="3" pushLg="4">
                 <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="speechOn()">
                     <ion-icon name="mic"></ion-icon>
                 </ion-button>
             </ion-col>
-            <ion-col sizeXs="4.5" sizeMd="2" sizeLg="3" pushMd="3" pushLg="1">
+            <ion-col sizeXs="4" sizeMd="2" sizeLg="2" pushXs="3" pushMd="3" pushLg="3">
                 <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="clickTranslate()">Translate
                 </ion-button>
             </ion-col>
         </ion-row>
-        <ion-list *ngIf="errorMessage.length > 1">
-            <ion-row *ngFor=" let error of errorMessage; let i = index ">
-                <ion-col>
-                    <ion-item color="danger" *ngIf="i >= 1">
-                        <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">
-                            {{ error }}
-                        </ion-label>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-        </ion-list>
+        <app-error-handler></app-error-handler>
     </ion-grid>
 </ion-content>
