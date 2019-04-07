@@ -1,5 +1,5 @@
 /* tslint:disable:no-trailing-whitespace */
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Injector} from '@angular/core';
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
