@@ -4,7 +4,6 @@ import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
 import {ErrorService} from './error.service';
 import {Platform} from '@ionic/angular';
-import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
     providedIn: 'root'
