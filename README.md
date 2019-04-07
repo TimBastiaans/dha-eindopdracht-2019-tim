@@ -63,7 +63,7 @@ To run the application on your device run the code below in the terminal.
 
 ### Verbeterpunten
 
-Een groot verbeterpunt van onze app is de gebruikte API. De API zelf is een goede keuze geweest wat betreft de functionaliteit van onze app, maar de gratis versie heeft maar een beperkt aantal calls per uur (5). Hierdoor kan onze app niet lang gebruikt worden. Een oplossing is om na iedere 5 calls met een vpn van locatie te wisselen. Een ander verbeterpunt is het tonen van de ingesproken text. Deze veranderd alleen wanneer het invoer veld na het inspreken wordt geselecteerd. Een klein verbeterpunt is ons splash screen. Wij zijn vergeten om hierin de naam van onze app aan te passen.
+Een groot verbeterpunt van onze app is de gebruikte API. De API zelf is een goede keuze geweest wat betreft de functionaliteit van onze app, maar de gratis versie heeft maar een beperkt aantal calls per uur (5). Hierdoor kan onze app niet lang gebruikt worden. Een oplossing is om na iedere 5 calls met een vpn van locatie te wisselen. Een betere oplossing zou een andere API zijn. Of een library voor de vertalingen. Het is alleen lastig om een library te vinden met de zelfde talen (Ik denk niet dat die bestaat). Een ander verbeterpunt is het tonen van de ingesproken text. Deze veranderd alleen wanneer het invoer veld na het inspreken wordt geselecteerd. Een klein verbeterpunt is ons splash screen. Wij zijn vergeten om hierin de naam van onze app aan te passen.
 
 ### Feedback
 
