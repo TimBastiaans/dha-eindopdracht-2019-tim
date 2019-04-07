@@ -9,7 +9,7 @@
 <ion-content [ngStyle]="{'font-size': fontSize + 'px'}">
     <ion-item>
         <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Language</ion-label>
-        <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage"
+        <ion-select [ngStyle]="{'font-size': fontSize + 'px'}" placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage"
                     (ionChange)="onChange($event)">
             <ion-select-option *ngFor="let lang of languages" [value]="lang">{{lang}}</ion-select-option>
         </ion-select>
