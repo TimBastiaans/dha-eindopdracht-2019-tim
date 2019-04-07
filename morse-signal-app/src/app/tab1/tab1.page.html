@@ -7,18 +7,14 @@
 </ion-header>
 
 <ion-content [ngStyle]="{'font-size': fontSize + 'px'}">
+    <ion-item>
+        <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Language</ion-label>
+        <ion-select [ngStyle]="{'font-size': fontSize + 'px'}" placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage"
+                    (ionChange)="onChange($event)">
+            <ion-select-option *ngFor="let lang of languages" [value]="lang">{{lang}}</ion-select-option>
+        </ion-select>
+    </ion-item>
     <ion-grid>
-        <ion-row class="row-small">
-            <ion-col sizeXs="12" sizeLg="6" pushLg="3">
-                <ion-item>
-                    <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">Language</ion-label>
-                    <ion-select placeholder="..." okText="Select" cancelText="Cancel" id="selectLanguage"
-                                (ionChange)="onChange($event)">
-                        <ion-select-option *ngFor="let lang of languages" [value]="lang">{{lang}}</ion-select-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-        </ion-row>
         <br>
         <ion-row class="row-small">
             <ion-col sizeXs="12" sizeLg="6" pushLg="3">
