@@ -4,7 +4,7 @@
 Tim Bastiaans & Wesley Andriessen
 
 ### Concept
-This is a translation application using the Translator APIs from Funtranslations. (https://funtranslations.com/api#)
+This is a translation application using the Translator APIs from [Funtranslations](https://funtranslations.com/api#).
 This application is developed using Ionic and has been tested to run on Android/IOS devices and in the Google Chrome browser.
 
 ### Screen sketches
@@ -15,7 +15,7 @@ The following images show the screen designs for this application.
 ### Chosen Technical requirements
 - Ionic UI [Ionic UI component](https://ionicframework.com/docs/components)
 - Sensor integration: [Microphone] & [Cameraflash]
-- HTTP/API integration: [Funtranslations API] (https://funtranslations.com/api#)
+- HTTP/API integration: [Funtranslations API](https://funtranslations.com/api#)
 
 ## 1. Functionalities
 The application includes the following functionalities:
@@ -54,7 +54,7 @@ To run the application on an android device run the code below in the terminal.
 
 `ionic cordova run android`
 
-Alternatively the Android/IOS application Devapp (https://ionicframework.com/docs/appflow/devapp/) can be used to deploy to a device. 
+Alternatively the Android/IOS application [Devapp](https://ionicframework.com/docs/appflow/devapp/) can be used to deploy to a device. 
 To run the application on your device run the code below in the terminal.
 
 `ionic serve --devapp`
@@ -63,7 +63,7 @@ To run the application on your device run the code below in the terminal.
 
 ### Verbeterpunten
 
-Een groot verbeterpunt van onze app is de gebruikte API. De API zelf is een goede keuze geweest wat betreft de functionaliteit van onze app, maar de gratis versie heeft maar een beperkt aantal calls per uur (5). Hierdoor kan onze app niet lang gebruikt worden. Een oplossing is om na iedere 5 calls met een vpn van locatie te wisselen. Een ander verbeterpunt is het tonen van de ingesproken text. Deze veranderd alleen wanneer het invoer veld na het inspreken wordt geselecteerd. Een klein verbeterpunt is ons splash screen. Wij zijn vergeten om hierin de naam van onze app aan te passen.
+Een groot verbeterpunt van onze app is de gebruikte API. De API zelf is een goede keuze geweest wat betreft de functionaliteit van onze app, maar de gratis versie heeft maar een beperkt aantal calls per uur (5). Hierdoor kan onze app niet lang gebruikt worden. Een oplossing is om na iedere 5 calls met een vpn van locatie te wisselen. Een betere oplossing zou een andere API zijn. Of een library voor de vertalingen. Het is alleen lastig om een library te vinden met de zelfde talen (Ik denk niet dat die bestaat). Een ander verbeterpunt is het tonen van de ingesproken text. Deze veranderd alleen wanneer het invoer veld na het inspreken wordt geselecteerd. Een klein verbeterpunt is ons splash screen. Wij zijn vergeten om hierin de naam van onze app aan te passen.
 
 ### Feedback
 
@@ -71,7 +71,7 @@ Wij hebben de feedback van Bart gehad om de morse vertalingen zelf op te nemen i
 
 ### App in native
 
-Iets wat anders geïmplementeerd had kunnen worden in een native app is de front-end van onze applicatie. Op dit moment wordt de front-end gemaakt met Ionic. Voor native apps hebben de IDE's die ik gebruikt heb allemaal een scenebuilder ingebouwd (Android Studio, Xcode). Deze maken het zeer eenvoudig om een front-end voor je app te bouwen (Vooral Android Studio. Ik vind Xcode een ramp). Voor onze app zijn wij een tijd bezig geweest met de CSS en met ion-grid om de front-end te maken. Dit had ons in Android Studio weinig tijd gekost door gebruik te maken van de scenebuilder. Er is een scenebuilder voor Ionic (https://ionicframework.com/creator) beschikbaar, maar ik heb hier geen ervaring mee en volgens reviews is er nog geen support voor Ionic 4 en weinig support voor Ionic 2/3.
+Iets wat anders geïmplementeerd had kunnen worden in een native app is de front-end van onze applicatie. Op dit moment wordt de front-end gemaakt met Ionic. Voor native apps hebben de IDE's die ik gebruikt heb allemaal een scenebuilder ingebouwd (Android Studio, Xcode). Deze maken het zeer eenvoudig om een front-end voor je app te bouwen (Vooral Android Studio. Ik vind Xcode een ramp). Voor onze app zijn wij een tijd bezig geweest met de CSS en met ion-grid om de front-end te maken. Dit had ons in Android Studio weinig tijd gekost door gebruik te maken van de scenebuilder. Er is een scenebuilder voor Ionic genaamd [Ionic Creator](https://ionicframework.com/creator) beschikbaar, maar ik heb hier geen ervaring mee en volgens reviews is er nog geen support voor Ionic 4 en weinig support voor Ionic 2/3.
 
 De voorkeur van ons voor het maken van apps valt op native apps. Je verliest op sommige punten wat snelheid in development wanneer je native apps maakt, maar hybrid apps hebben over het algemeen slechtere performance en security.
 
@@ -91,7 +91,7 @@ Als voldaan is aan deze minimale vereisten:
 - [x] 7. Voor tenminste één platform gebouwd
 - [x] 8. Code, folderstructuur en bestandsnamen voldoen aan *de link:https://angular.io/guide/styleguide[Angular Styleguide]*
 - [x] 9. De app slaat zaken *(lokaal!) op* (zoals settings, laatste level, eerdere gedane input)*
-- [ ] 10. App bevat tenminste één (Angular) *custom component* (met attributen/parameters waaronder minstens 1 `@Input` en 1 `@Output`!)*
+- [x] 10. App bevat tenminste één (Angular) *custom component* (met attributen/parameters waaronder minstens 1 `@Input` en 1 `@Output`!)*
 - [x] 11. GEEN wachtwoorden opslaan in App (als toch perse nodig is, gebruik link:https://ionicframework.com/docs/native/intel-security/[IntelSecurity] of gelijkwaardig; NIET zelf security implementeren)
 - [x] 12. Gebruik kan op intuitieve manier invoer doen in app (bv. configuratie, sensor sensitiviteit, spelersniveau van game)
 - [x] 13. Schrijf unit tests voor cruciale/complexere functionaliteiten in je app (minsten 4 unit tests)
