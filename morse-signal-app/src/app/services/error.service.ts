@@ -16,4 +16,15 @@ export class ErrorService {
     newError.push(error);
     this.errorSource.next(newError);
   }
+
+  removeError(error: string) {
+    const delError = this.errorSource.getValue();
+    delError.filter(this.findError);
+    this.errorSource.next(delError);
+  }
+
+
+  findError(error, value) {
+    return value !== error;
+  }
 }

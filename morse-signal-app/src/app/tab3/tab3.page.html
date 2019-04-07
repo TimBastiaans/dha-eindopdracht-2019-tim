@@ -55,7 +55,7 @@
           <ion-item color="danger" *ngIf="i >= 1">
             <ion-label [ngStyle]="{'font-size': fontSize + 'px'}">
               {{ error }}
-              <ion-button color="danger" [ngStyle]="{'font-size': fontSize + 'px'}" class="removeButton">
+              <ion-button (click)="removeError(error)" color="danger" [ngStyle]="{'font-size': fontSize + 'px'}" class="removeButton">
                 -
               </ion-button>
             </ion-label>

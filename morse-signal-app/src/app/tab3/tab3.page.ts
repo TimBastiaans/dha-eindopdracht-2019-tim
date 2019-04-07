@@ -68,6 +68,10 @@ export class Tab3Page {
                 () => this.errorService.addError('Error storing fontSize')
             );
     }
+
+    removeError(error: string) {
+        this.errorService.removeError(error);
+    }
 }
 
 
