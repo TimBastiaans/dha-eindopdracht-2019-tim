@@ -57,7 +57,7 @@ export class Tab3Page {
         this.nativeStorage.setItem('fontSize', {fontsize: fontSize})
             .then(
                 () => console.log('Font-size Stored'),
-                () => this.errorService.addError('Error storing fontSize')
+                (error) => console.log(error),
             );
     }
 
@@ -65,7 +65,7 @@ export class Tab3Page {
         this.nativeStorage.setItem('theme', {themeName: themeName})
             .then(
                 () => console.log('Font-size Stored'),
-                () => this.errorService.addError('Error storing fontSize')
+                (error) => console.log(error),
             );
     }
 }
