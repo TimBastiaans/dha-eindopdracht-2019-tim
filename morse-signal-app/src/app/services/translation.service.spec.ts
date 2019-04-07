@@ -1,16 +1,20 @@
 /* tslint:disable:prefer-const no-trailing-whitespace */
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {TranslationService} from './translation.service';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
+import {ErrorService} from './error.service';
+import {Platform} from '@ionic/angular';
 
 describe('TranslationService', () => {
     let service;
     let flashlight: Flashlight;
     let http: HTTP;
+    let platform: Platform;
+    let errorService: ErrorService;
 
     beforeEach(() => {
-        service = new TranslationService(flashlight, http);
+        service = new TranslationService(flashlight, http, errorService, platform);
     });
 
     it('should be created', () => {
@@ -22,6 +26,12 @@ describe('TranslationService', () => {
         spyOn(service.translate('a', 'morse'), 'catch');
         service.translate('a', '12345');
         expect(service.translate('a', 'morse').catch);
+    });
+
+    it('should catch on #translate() because of non-existing language', () => {
+        spyOn(service.translate('a', 'abcdefg'), 'catch');
+        service.translate('a', 'abcdefg');
+        expect(service.translate('a', 'abcdefg').catch);
     });
 
     it('should catch on #translateText()', async () => {

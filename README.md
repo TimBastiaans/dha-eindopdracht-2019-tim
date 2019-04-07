@@ -13,7 +13,7 @@ The following images show the screen designs for this application.
 ![Design](design.png)
 
 ### Chosen Technical requirements
-- Ionic UI [Ionic UI componentent](https://ionicframework.com/docs/components)
+- Ionic UI [Ionic UI component](https://ionicframework.com/docs/components)
 - Sensor integration: [Microphone] & [Cameraflash]
 - HTTP/API integration: [Funtranslations API] (https://funtranslations.com/api#)
 
@@ -71,12 +71,9 @@ Wij hebben de feedback van Bart gehad om de morse vertalingen zelf op te nemen i
 
 ### App in native
 
-deze nog toevoegen!!
-(- Een korte beschrijving van en reflectie op een functionaliteit in je app die wezenlijk anders te realiseren was geweest als je je app als native app had gerealiseerd (bv. makkelijker of moeilijker).)
+Iets wat anders geïmplementeerd had kunnen worden in een native app is de front-end van onze applicatie. Op dit moment wordt de front-end gemaakt met Ionic. Voor native apps hebben de IDE's die ik gebruikt heb allemaal een scenebuilder ingebouwd (Android Studio, Xcode). Deze maken het zeer eenvoudig om een front-end voor je app te bouwen (Vooral Android Studio. Ik vind Xcode een ramp). Voor onze app zijn wij een tijd bezig geweest met de CSS en met ion-grid om de front-end te maken. Dit had ons in Android Studio weinig tijd gekost door gebruik te maken van de scenebuilder. Er is een scenebuilder voor Ionic (https://ionicframework.com/creator) beschikbaar, maar ik heb hier geen ervaring mee en volgens reviews is er nog geen support voor Ionic 4 en weinig support voor Ionic 2/3.
 
-De voorkeur van Wesley voor het maken van apps valt op hybrid apps. Je verliest op sommige punten wat performance wanneer je hybrid apps maakt, maar de mogelijkheid om met 1 codebase voor alle devices een app te ontwikkelen is een groot voordeel ten opzichte van native apps. 
-
-(Voorkeur tim toevoegen!!!)
+De voorkeur van ons voor het maken van apps valt op native apps. Je verliest op sommige punten wat snelheid in development wanneer je native apps maakt, maar hybrid apps hebben over het algemeen slechtere performance en security.
 
 ## 5. Beoordeling/Evaluatie
 

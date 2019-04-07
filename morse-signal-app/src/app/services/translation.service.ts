@@ -2,17 +2,31 @@
 import {Injectable} from '@angular/core';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
-import {ErrorService} from "./error.service";
+import {ErrorService} from './error.service';
+import {Platform} from '@ionic/angular';
 
 @Injectable({
     providedIn: 'root'
 })
 export class TranslationService {
-    morseUnitInterval = 250;
-    fontSize = 16;
-
+    private _morseUnitInterval: number;
+    private _fontSize: number;
     private _translation: string;
 
+    get fontSize(): number {
+        return this._fontSize;
+    }
+
+    set fontSize(value: number) {
+        this._fontSize = value;
+    }
+    get morseUnitInterval(): number {
+        return this._morseUnitInterval;
+    }
+
+    set morseUnitInterval(value: number) {
+        this._morseUnitInterval = value;
+    }
     get translation(): string {
         return this._translation;
     }
@@ -21,7 +35,10 @@ export class TranslationService {
         this._translation = value;
     }
 
-    constructor(private flashlight: Flashlight, public http: HTTP, private errorService: ErrorService) {
+    constructor(private flashlight: Flashlight, public http: HTTP,
+                private errorService: ErrorService, private platform: Platform) {
+        this.fontSize = 16;
+        this.morseUnitInterval = 250;
     }
 
     async translate(textToTranslate: string, chosenLanguage: string) {
@@ -30,6 +47,9 @@ export class TranslationService {
     }
 
     async translateText(textToTranslate: string, chosenLanguage: string) {
+        if (chosenLanguage === undefined) {
+            chosenLanguage = 'morse';
+        }
         await this.http
             .post('https://api.funtranslations.com/translate/' + chosenLanguage.toLowerCase() + '.json',
                 {'text': textToTranslate}, {})
@@ -38,13 +58,15 @@ export class TranslationService {
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                    await this.flash(this.translation);
+                    if (this.platform.is('cordova')) {
+                        console.log('Camera Flash is not available with Cordova.');
+                    } else {
+                        await this.flash(this.translation);
+                    }
                 }
             })
-            .catch(errorMessage => {
-                const json = errorMessage['error'];
-                const obj = JSON.parse(json);
-                this.errorService.addError(obj);
+            .catch(() => {
+                this.errorService.addError('Too many requests. Try again later.');
             });
     }
 

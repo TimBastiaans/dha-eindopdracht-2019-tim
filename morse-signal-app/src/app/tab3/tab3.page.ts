@@ -1,3 +1,4 @@
+/* tslint:disable:no-trailing-whitespace */
 import {Component} from '@angular/core';
 import {DataService} from '../services/data.service';
 import {ThemeService} from '../services/theme.service';
@@ -12,13 +13,32 @@ import {ErrorService} from '../services/error.service';
 })
 
 export class Tab3Page {
-    fontSize = 16;
-    errorMessage: string[];
+    private _fontSize: number;
+    private _errorMessage: string[];
 
-    constructor(private data: DataService,
-                private theme: ThemeService,
-                private nativeStorage: NativeStorage,
-                private errorService: ErrorService) {
+    get errorMessage(): string[] {
+        return this._errorMessage;
+    }
+
+    set errorMessage(value: string[]) {
+        this._errorMessage = value;
+    }
+
+    get fontSize(): number {
+        return this._fontSize;
+    }
+
+    set fontSize(value: number) {
+        this._fontSize = value;
+    }
+
+    constructor(private data: DataService, private theme: ThemeService,
+                private nativeStorage: NativeStorage, private errorService: ErrorService) {
+        this.fontSize = 16;
+        this.setFontSize();
+    }
+
+    private setFontSize() {
         this.data.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
         this.errorService.currentErrors.subscribe(error => this.errorMessage = error);
     }
@@ -28,13 +48,13 @@ export class Tab3Page {
         this.setThemeInStorage(themeName);
     }
 
-    changeFontSize(number: number) {
-        this.data.changeFontSize(number);
-        this.setFontInStorage();
+    changeFontSize(fontSize: number) {
+        this.data.changeFontSize(fontSize);
+        this.setFontInStorage(fontSize);
     }
 
-    setFontInStorage() {
-        this.nativeStorage.setItem('fontSize', {fontsize: this.fontSize})
+    setFontInStorage(fontSize: number) {
+        this.nativeStorage.setItem('fontSize', {fontsize: fontSize})
             .then(
                 () => console.log('Font-size Stored'),
                 () => this.errorService.addError('Error storing fontSize')

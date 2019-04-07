@@ -1,5 +1,5 @@
 // tslint:disable
-import {TestBed} from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing';
 import {Injectable, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {Tab1Page} from './tab1.page';
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
@@ -35,6 +35,7 @@ describe('Tab1Page', () => {
                 SpeechRecognition,
                 Flashlight,
                 HTTP,
+                Tab1Page,
                 {provide: DataService, useClass: MockDataService},
                 {provide: ThemeService, useClass: MockThemeService},
                 NativeStorage,
@@ -47,28 +48,8 @@ describe('Tab1Page', () => {
     });
 
     it('should create a component', async () => {
+        component = TestBed.get(Tab1Page);
         expect(component).toBeTruthy();
-    });
-
-    it('should run #askSpeechPermission()', async () => {
-        component.askSpeechPermission();
-        expect(component.askSpeechPermission());
-    });
-
-    it('should run #speechOn()', async () => {
-        component.speechOn();
-        expect(component.speechOn());
-    });
-
-    it('should run #clickTranslate()', async () => {
-        component.clickTranslate();
-        expect(component.clickTranslate());
-    });
-
-    it('should catch on #setSettings()', async () => {
-        spyOn(component.clickTranslate(), 'catch');
-        component.clickTranslate();
-        expect(component.clickTranslate().catch);
     });
 
 });

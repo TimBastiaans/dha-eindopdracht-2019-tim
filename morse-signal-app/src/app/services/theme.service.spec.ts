@@ -7,7 +7,6 @@ import * as Color from 'color';
 describe('ThemeService', () => {
   let service;
   let document;
-  let color: Color;
 
   beforeEach(() => {
     document = DOCUMENT;
