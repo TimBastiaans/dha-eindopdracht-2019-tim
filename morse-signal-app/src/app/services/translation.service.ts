@@ -4,6 +4,7 @@ import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
 import {ErrorService} from './error.service';
 import {Platform} from '@ionic/angular';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
     providedIn: 'root'
@@ -58,8 +59,8 @@ export class TranslationService {
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                    if (this.platform.is('cordova')) {
-                        console.log('Camera Flash is not available with Cordova.');
+                    if (!this.platform.is('android') || !this.platform.is('ios')) {
+                        this.errorService.addError('Camera Flash is not available.');
                     } else {
                         await this.flash(this.translation);
                     }
