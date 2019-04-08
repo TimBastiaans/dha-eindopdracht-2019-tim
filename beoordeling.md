@@ -26,7 +26,7 @@ Als voldaan is aan deze minimale vereisten:
 - [x] 1. Tijdig aanleveren voorstel App-3 (nieuw idee of significante uitbreiding App-2)
 - [x] 2. Kopieer deze README naar `beoordeling.md` en maak een eigen `README.md` met weer een 'how-to-run' en functioneel overzicht.
 - [x] 3. App werkt ook in je browser (afvangen van fouten door missende native functionaliteit en tonen nette melding gebruiker)
-- [ ] 4. Ziet er overall goed uit, is responsive en crasht niet (of nauwelijks) **niet echt responsive**
+- [x] 4. Ziet er overall goed uit, is responsive en crasht niet (of nauwelijks) **niet echt responsive**
 - [x] 5. Heeft - net als App 2 - *niet* de standaard naam, app icon, splash screen of bundle identifier
 - [x] 6. De app is van jezelf, niet gekopieerd (e.g. app bevat aantal originele elementen in *1)
 - [x] 7. Voor tenminste één platform gebouwd
@@ -34,9 +34,9 @@ Als voldaan is aan deze minimale vereisten:
 - [x] 9. De app slaat zaken *(lokaal!) op* (zoals settings, laatste level, eerdere gedane input)*
 - [ ] 10. App bevat tenminste één (Angular) *custom component* (met attributen/parameters waaronder minstens 1 `@Input` en 1 `@Output`!)* **geen @input en @output**
 - [x] 11. GEEN wachtwoorden opslaan in App (als toch perse nodig is, gebruik link:https://ionicframework.com/docs/native/intel-security/[IntelSecurity] of gelijkwaardig; NIET zelf security implementeren)
-- [ ] 12. Gebruik kan op intuitieve manier invoer doen in app (bv. configuratie, sensor sensitiviteit, spelersniveau van game)
+- [x] 12. Gebruik kan op intuitieve manier invoer doen in app (bv. configuratie, sensor sensitiviteit, spelersniveau van game)
 - [ ] 13. Schrijf unit tests voor cruciale/complexere functionaliteiten in je app (minsten 4 unit tests) **is created en translation service alleen getest**
-- [ ] 14. Schrijf in de README ook een reflectie op basis van de demo les (met evt. debat): Evaluatie app + hybrid vs. native*
+- [x] 14. Schrijf in de README ook een reflectie op basis van de demo les (met evt. debat): Evaluatie app + hybrid vs. native*
 
 **Add 14 Evaluatie:**
 - Schrijf een korte evaluatie van je app en de nog te verbeteren punten.
@@ -48,7 +48,7 @@ Zet dit alles in een kopje `reflectie` in je README.md of in een apart reflectie
 *1) De functionaliteit mag wel bestaan, maar is geen directe kopie van een bestaande appstore 'kraker', of heeft tenminste een originele twist, nieuwe doelgroep oid.
 
 ### 2. Minpunten (of knockouts)
-- [ ] M1. Te laat ingeleverd (uiterlijk) **-1**
+- [x] M1. Te laat ingeleverd (uiterlijk) **-1**
     - Op tijd **-0**
     - Halve week te laat **-0.5**
     - Week te laat **-1.0**
@@ -77,7 +77,7 @@ Zet dit alles in een kopje `reflectie` in je README.md of in een apart reflectie
 ### 3. Pluspunten
 Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6+4=10.
 
-- [ ] P1. App werkt op 2 of meer platformen via platformspecifieke code **max +0.5**
+- [x] P1. App werkt op 2 of meer platformen via platformspecifieke code **max +0.5**
     - Ionic doet al het werk voor je (geen platformspecifieke code) **+0**
     - Minor tweaks mits ook enigszins functioneel toepasselijk (`platform.is`) **+0.25**
     - Complexere en toepasselijk **+0.5**
