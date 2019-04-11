@@ -35,7 +35,7 @@ Als voldaan is aan deze minimale vereisten:
 - [ ] 10. App bevat tenminste één (Angular) *custom component* (met attributen/parameters waaronder minstens 1 `@Input` en 1 `@Output`!)* **geen @input en @output**
 - [x] 11. GEEN wachtwoorden opslaan in App (als toch perse nodig is, gebruik link:https://ionicframework.com/docs/native/intel-security/[IntelSecurity] of gelijkwaardig; NIET zelf security implementeren)
 - [x] 12. Gebruik kan op intuitieve manier invoer doen in app (bv. configuratie, sensor sensitiviteit, spelersniveau van game)
-- [x] 13. Schrijf unit tests voor cruciale/complexere functionaliteiten in je app (minsten 4 unit tests) 
+- [ ] 13. Schrijf unit tests voor cruciale/complexere functionaliteiten in je app (minsten 4 unit tests) -- Geen expected result bekeken. ze testen niet wat je zegt dat ze moeten gaan testen.
 - [x] 14. Schrijf in de README ook een reflectie op basis van de demo les (met evt. debat): Evaluatie app + hybrid vs. native*
 
 **Add 14 Evaluatie:**
