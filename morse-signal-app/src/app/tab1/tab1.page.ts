@@ -22,6 +22,7 @@ export class Tab1Page implements OnInit {
     private _chosenLanguage: string;
     private _displayText: string;
     private _errorMessage: string[];
+    theDate = new Date();
 
     get errorMessage(): string[] {
         return this._errorMessage;

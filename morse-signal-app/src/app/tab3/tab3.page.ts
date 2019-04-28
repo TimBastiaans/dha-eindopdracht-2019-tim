@@ -15,6 +15,7 @@ import {ErrorService} from '../services/error.service';
 export class Tab3Page {
     private _fontSize: number;
     private _errorMessage: string[];
+    theDate = new Date();
 
     get errorMessage(): string[] {
         return this._errorMessage;

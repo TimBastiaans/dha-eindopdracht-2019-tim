@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ErrorService} from '../services/error.service';
 import {DataService} from '../services/data.service';
 
@@ -10,6 +10,7 @@ import {DataService} from '../services/data.service';
 export class ErrorHandlerComponent implements OnInit {
   errorMessage: string[];
   fontSize: number;
+  @Input() dateOfToday: Date;
 
   constructor(private errorService: ErrorService,
               private dataService: DataService) {
