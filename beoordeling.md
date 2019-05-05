@@ -48,7 +48,7 @@ Zet dit alles in een kopje `reflectie` in je README.md of in een apart reflectie
 *1) De functionaliteit mag wel bestaan, maar is geen directe kopie van een bestaande appstore 'kraker', of heeft tenminste een originele twist, nieuwe doelgroep oid.
 
 ### 2. Minpunten (of knockouts)
-- [x] M1. Te laat ingeleverd (uiterlijk) **-1**
+- [ ] M1. Te laat ingeleverd (uiterlijk) **-1**
     - Op tijd **-0**
     - Halve week te laat **-0.5**
     - Week te laat **-1.0**
@@ -79,15 +79,15 @@ Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6
 
 - [x] P1. App werkt op 2 of meer platformen via platformspecifieke code **max +0.5**
     - Ionic doet al het werk voor je (geen platformspecifieke code) **+0**
-    - Minor tweaks mits ook enigszins functioneel toepasselijk (`platform.is`) **+0.25**
+    - Minor tweaks mits ook enigszins functioneel toepasselijk (`platform.is`) **+0.25** -
     - Complexere en toepasselijk **+0.5**
 - [ ] P2. Multi 'form factor'/responsive design **max +0.5**
     - Alleen meeschalen/aanpassen door gebruik Ionic componenten **+0**
     - Serieus gebruik Ionic grid of simpele media query/JS (buiten Ionic) **+0.25**
     - Toepasselijk tonen/verbergen elementen in landscape/portrait of tablet, retina e.d. **+0.5**
-- [ ] P3. Meerdere integraties **max +0.5**
+- [x] P3. Meerdere integraties **max +0.5**
     - Geen extra integraties t.o.v. App-2 **+0**
-    - Simpel uitlezen, bv. simpele rest API/.json bestand **+0.25**
+    - Simpel uitlezen, bv. simpele rest API/.json bestand **+0.25** -
     - Toepasselijk gebruik van externe API (via http) en/of wrappen van externe library in eigen service (NB code werk in eigen (backend) API's wordt NIET beloond) **+0.5**
 - [ ] P4. PWA met tenminste één PWA specifieke implementatie **max +1**
     - Basis PWA van Ionic met triviale service worker **+0**
@@ -99,7 +99,7 @@ Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6
     - Toepasselijk gebruik van sensor met custom visualisatie van opgehaalde data in app **+0.5**
 - [ ] P6. Goed en toepasselijk gebruik RxJS operators _max +0.5_
     - Geen extra RxJS t.o.v. app-2 of enkel gebruik van `.subscribe`  of `Observable.` of niet functioneel gebruik +0
-    - Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25
+    - Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25 -
     - Verwerkt merendeel van logica binnen RxJS +0.5
 - [ ] P7. Verspreid in een AppStore / Play Store o.i.d. **max +0.5**
     - Basic/niet te vinden **+0**
