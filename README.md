@@ -98,9 +98,9 @@ Als voldaan is aan deze minimale vereisten:
 - [x] 14. Schrijf in de README ook een reflectie op basis van de demo les (met evt. debat): Evaluatie app + hybrid vs. native*
 
 ### Minpunten (of knockouts)
-- [x] M1. Te laat ingeleverd (uiterlijk) **-1**
+- [ ] M1. Te laat ingeleverd (uiterlijk) **-1**
     - Op tijd **-0**
-    - X Halve week te laat **-0.5** (In weekend doorgewerkt)
+    - X Halve week te laat **-0.5** 
     - Week te laat **-1.0**
     - Meer dan week te laat: **knock-out**, volgende blok inleveren
 - [ ] M2. Smelly code _max **-1_**
@@ -113,8 +113,8 @@ Als voldaan is aan deze minimale vereisten:
     - App crasht in zeldzaam geval, oorzaak is niet beschreven maar goede mondelinge toelichting **-0.5**
     - App crasht af en toe om voorkombare reden of reden is niet beschreven of onderzocht **-1**
     - App crasht structureel: **knock-out**
-- [x] M4. Crappy layout **max -1**
-    - X Een of twee onvolkomenheden **-0.25** 
+- [ ] M4. Crappy layout **max -1**
+    - Een of twee onvolkomenheden **-0.25** 
     - Meer onvolkomenheden **-0.5**
     - Geen zorg aan layout besteed **-1.0** 
     - App is alleen usable voor developer: **knock-out**
@@ -147,12 +147,12 @@ Uiteraard kun je maximaal maar 4 van de 5 mogelijke bonuspunten halen voor een 6
     - X Geen andere sensors dan 1e 2 in App-2 **+0**
     - Niet zo toepasselijk gebruik van extra sensor **+0.25**
     - Toepasselijk gebruik van sensor met custom visualisatie van opgehaalde data in app **+0.5**
-- [x] P6. Goed en toepasselijk gebruik RxJS operators _max +0.5_
+- [ ] P6. Goed en toepasselijk gebruik RxJS operators _max +0.5_
     - Geen extra RxJS t.o.v. app-2 of enkel gebruik van `.subscribe`  of `Observable.` of niet functioneel gebruik +0
-    - X Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25
+    - Triviaal maar wel functioneel gebruik van een of meer RxJS operators +0.25
     - Verwerkt merendeel van logica binnen RxJS +0.5
 - [ ] P7. Verspreid in een AppStore / Play Store o.i.d. **max +0.5**
-    - X Basic/niet te vinden **+0**
+    - Basic/niet te vinden **+0**
     - Energie in promotie gestoken zoals mooie custom icon, aantrekkelijke beschrijving **+0.25**
     - Veel energie in gestoken, promotie truc o.i.d. **+0.5**
 - [ ] P8. Vrije toevoeging (ter beoordeling docent, oftewel subjectief) **max. +1**
