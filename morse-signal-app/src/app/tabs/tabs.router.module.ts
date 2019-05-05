@@ -8,33 +8,33 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'translate-tab',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../translate-tab/translate-tab.module#TranslateTabModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'settings-tab',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../settings-tab/settings-tab.module#SettingsTabModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/translate-tab',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/translate-tab',
     pathMatch: 'full'
   }
 ];

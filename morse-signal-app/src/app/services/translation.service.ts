@@ -48,7 +48,7 @@ export class TranslationService {
 
     async translateText(textToTranslate: string, chosenLanguage: string) {
         if (chosenLanguage === undefined) {
-            chosenLanguage = 'morse';
+            chosenLanguage = 'yoda';
         }
         await this.http
             .post('https://api.funtranslations.com/translate/' + chosenLanguage.toLowerCase() + '.json',
@@ -58,7 +58,7 @@ export class TranslationService {
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                    if (!this.platform.is('android') && !this.platform.is('ios')) {
+                   if (!this.platform.is('android') && !this.platform.is('ios')) {
                         this.errorService.addError('Camera Flash is not available.');
                     } else {
                         await this.flash(this.translation);

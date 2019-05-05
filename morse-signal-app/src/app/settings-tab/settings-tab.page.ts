@@ -7,12 +7,12 @@ import {ErrorService} from '../services/error.service';
 
 
 @Component({
-    selector: 'app-tab3',
-    templateUrl: 'tab3.page.html',
-    styleUrls: ['tab3.page.scss']
+    selector: 'app-settings-tab',
+    templateUrl: 'settings-tab.page.html',
+    styleUrls: ['settings-tab.page.scss']
 })
 
-export class Tab3Page {
+export class SettingsTabPage {
     private _fontSize: number;
     private _errorMessage: string[];
     theDate = new Date();

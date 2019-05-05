@@ -1,5 +1,5 @@
 /* tslint:disable:no-trailing-whitespace */
-import {Component, OnInit, Injector} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
@@ -10,11 +10,11 @@ import {TranslationService} from '../services/translation.service';
 import {ErrorService} from '../services/error.service';
 
 @Component({
-    selector: 'app-tab1',
-    templateUrl: 'tab1.page.html',
-    styleUrls: ['tab1.page.scss']
+    selector: 'app-translate-tab',
+    templateUrl: 'translate-tab.page.html',
+    styleUrls: ['translate-tab.page.scss']
 })
-export class Tab1Page implements OnInit {
+export class TranslateTabPage implements OnInit {
     private _fontSize: number;
     private _languages: string[];
     private _translation: Promise<string>;

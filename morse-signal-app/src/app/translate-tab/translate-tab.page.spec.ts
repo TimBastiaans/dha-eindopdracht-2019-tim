@@ -1,7 +1,7 @@
 // tslint:disable
 import {inject, TestBed} from '@angular/core/testing';
 import {Injectable, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {Tab1Page} from './tab1.page';
+import {TranslateTabPage} from './translate-tab.page';
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
@@ -22,20 +22,20 @@ class MockThemeService {
 class MockTranslationService {
 }
 
-describe('Tab1Page', () => {
+describe('TranslateTabPage', () => {
     let fixture;
     let component;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [
-                Tab1Page
+                TranslateTabPage
             ],
             providers: [
                 SpeechRecognition,
                 Flashlight,
                 HTTP,
-                Tab1Page,
+                TranslateTabPage,
                 {provide: DataService, useClass: MockDataService},
                 {provide: ThemeService, useClass: MockThemeService},
                 NativeStorage,
@@ -43,12 +43,12 @@ describe('Tab1Page', () => {
             ],
             schemas: [CUSTOM_ELEMENTS_SCHEMA]
         }).compileComponents();
-        fixture = TestBed.createComponent(Tab1Page);
+        fixture = TestBed.createComponent(TranslateTabPage);
         component = fixture.debugElement.componentInstance;
     });
 
     it('should create a component', async () => {
-        component = TestBed.get(Tab1Page);
+        component = TestBed.get(TranslateTabPage);
         expect(component).toBeTruthy();
     });
 
