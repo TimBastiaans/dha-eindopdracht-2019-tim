@@ -5,7 +5,6 @@ import {ThemeService} from '../services/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {ErrorService} from '../services/error.service';
 
-
 @Component({
     selector: 'app-settings-tab',
     templateUrl: 'settings-tab.page.html',

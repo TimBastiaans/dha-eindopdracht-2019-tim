@@ -58,11 +58,11 @@ export class TranslationService {
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                   if (!this.platform.is('android') && !this.platform.is('ios')) {
-                        this.errorService.addError('Camera Flash is not available.');
-                    } else {
+                 //  if (!this.platform.is('android') && !this.platform.is('ios')) {
+                 //       this.errorService.addError('Camera Flash is not available.');
+              //      } else {
                         await this.flash(this.translation);
-                    }
+                  //  }
                 }
             })
             .catch(() => {

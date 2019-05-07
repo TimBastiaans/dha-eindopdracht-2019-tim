@@ -19,12 +19,12 @@
       <ion-row>
         <ion-col sizeXs="12" sizeLg="6" pushLg="3">
           <ion-item>
-            <ion-button (click)="changeFontSize(fontSize - 1)">
-              <ion-icon [ngStyle]="{'font-size': fontSize/2 + 'px'}" name="remove"></ion-icon>
-            </ion-button>
-            <ion-button (click)="changeFontSize(fontSize + 1)">
-              <ion-icon [ngStyle]="{'font-size': fontSize/2 + 'px'}" name="add"></ion-icon>
-            </ion-button>
+<!--            <ion-button (click)="changeFontSize(fontSize - 1)">-->
+<!--              <ion-icon [ngStyle]="{'font-size': fontSize/2 + 'px'}" name="remove"></ion-icon>-->
+<!--            </ion-button>-->
+<!--            <ion-button (click)="changeFontSize(fontSize + 1)">-->
+<!--              <ion-icon [ngStyle]="{'font-size': fontSize/2 + 'px'}" name="add"></ion-icon>-->
+<!--            </ion-button>-->
             <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeFontSize(16)">Small</ion-button>
             <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeFontSize(22)">Medium</ion-button>
             <ion-button [ngStyle]="{'font-size': fontSize/2 + 'px'}" (click)="changeFontSize(27)">Large</ion-button>
