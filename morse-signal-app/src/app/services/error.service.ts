@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {forEach} from '@angular-devkit/schematics';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +22,5 @@ export class ErrorService {
     delError = delError.filter(x => x !== error);
     this.errorSource.next(delError);
   }
-
 
 }
