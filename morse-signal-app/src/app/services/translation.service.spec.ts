@@ -1,20 +1,41 @@
 /* tslint:disable:prefer-const no-trailing-whitespace */
 import {TestBed} from '@angular/core/testing';
 import {TranslationService} from './translation.service';
-import {Flashlight} from '@ionic-native/flashlight/ngx';
-import {HTTP} from '@ionic-native/http/ngx';
-import {ErrorService} from './error.service';
 import {Platform} from '@ionic/angular';
 
 describe('TranslationService', () => {
-    let service;
-    let flashlight: Flashlight;
-    let http: HTTP;
+    let flashlightSpy, httpSpy, errorServiceSpy, translateServiceSpy;
+    let flashOn, flashOff, post, error, tran, trantext;
+    let service: TranslationService;
     let platform: Platform;
-    let errorService: ErrorService;
 
     beforeEach(() => {
-        service = new TranslationService(flashlight, http, errorService, platform);
+        flashOn = Promise.resolve();
+        flashOff = Promise.resolve();
+        post = Promise.resolve();
+        error = Promise.resolve();
+        tran = Promise.resolve();
+        trantext = Promise.resolve();
+
+        flashlightSpy = jasmine.createSpyObj('flashlight', {
+            switchOn: flashOn,
+            switchOff: flashOff
+        });
+
+        httpSpy = jasmine.createSpyObj('http', {
+            post: post
+        });
+
+        errorServiceSpy = jasmine.createSpyObj('errorService', {
+            addError: error
+        });
+
+        translateServiceSpy = jasmine.createSpyObj('TranslationService', {
+            translate: tran,
+            translateText: trantext
+        });
+
+        service = new TranslationService(flashlightSpy, httpSpy, errorServiceSpy, platform);
     });
 
     it('should be created', () => {
@@ -22,34 +43,60 @@ describe('TranslationService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('should catch on #translate()', () => {
-        spyOn(service.translate('a', 'morse'), 'catch');
-        service.translate('a', '12345');
-        expect(service.translate('a', 'morse').catch);
+    it('should run #translatetext() when calling #translate()', () => {
+        service.translate('a', 'morse').then(() => {
+            expect(service.translateText).toBeTruthy();
+        }).catch(() => {
+            fail();
+        });
     });
 
-    it('should catch on #translate() because of non-existing language', () => {
-        spyOn(service.translate('a', 'abcdefg'), 'catch');
-        service.translate('a', 'abcdefg');
-        expect(service.translate('a', 'abcdefg').catch);
+    it('should run #addError() when calling #translateText()', () => {
+        service.translateText('a', ' morse').then(() => {
+            expect(errorServiceSpy.addError).toHaveBeenCalled();
+        }).catch(() => {
+            fail();
+        });
     });
 
-    it('should catch on #translateText()', async () => {
-        spyOn(service.translateText('a', 'morse'), 'catch');
-        service.translateText('a', '12345');
-        expect(service.translateText('a', 'morse').catch());
+    it('should run #flash() when calling #translate()', async () => {
+        service.translate('a', ' morse').then(() => {
+            expect(service.flash).toBeTruthy();
+        }).catch(() => {
+            fail();
+        });
+    });
+
+    it('should run #flash() when calling #translateText()', async () => {
+        service.translateText('a', ' morse').then(() => {
+            expect(service.flash).toBeTruthy();
+        }).catch(() => {
+            fail();
+        });
     });
 
     it('should run #translate()', async () => {
         spyOn(service.translate('a', 'morse'), 'catch');
         service.translate('a', 'morse');
-        expect(service.translate('a', 'morse'));
+        expect(service.translate('a', 'morse').catch(() => {
+            fail();
+        }));
     });
 
     it('should run #translateText()', async () => {
         spyOn(service.translateText('a', 'morse'), 'catch');
         service.translateText('a', 'morse');
-        expect(service.translateText('a', 'morse'));
+        expect(service.translateText('a', 'morse').catch(() => {
+            fail();
+        }));
+    });
+
+    it('should run #flashTimer() when calling #translate()', async () => {
+        service.translate('a', ' morse').then(() => {
+            expect(service.flashTimer).toBeTruthy();
+        }).catch(() => {
+            fail();
+        });
     });
 
 });

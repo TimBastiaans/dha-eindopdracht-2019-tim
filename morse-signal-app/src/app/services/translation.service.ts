@@ -35,8 +35,7 @@ export class TranslationService {
         this._translation = value;
     }
 
-    constructor(private flashlight: Flashlight, public http: HTTP,
-                private errorService: ErrorService, private platform: Platform) {
+    constructor(private flashlight: Flashlight, private http: HTTP, private errorService: ErrorService, private platform: Platform) {
         this.fontSize = 16;
         this.morseUnitInterval = 250;
     }
@@ -58,7 +57,7 @@ export class TranslationService {
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                  if (!this.platform.is('android') && !this.platform.is('ios')) {
+                  if (this.platform.is('android') && !this.platform.is('ios')) {
                        this.errorService.addError('Camera Flash is not available.');
                    } else {
                         await this.flash(this.translation);

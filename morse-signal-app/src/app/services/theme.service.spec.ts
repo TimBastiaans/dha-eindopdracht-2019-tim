@@ -1,21 +1,53 @@
 /* tslint:disable:no-trailing-whitespace prefer-const */
-import { TestBed } from '@angular/core/testing';
-import { ThemeService } from './theme.service';
-import { DOCUMENT } from '@angular/common';
+import {TestBed} from '@angular/core/testing';
+import {ThemeService} from './theme.service';
+import {DOCUMENT} from '@angular/common';
 import * as Color from 'color';
 
 describe('ThemeService', () => {
-  let service;
-  let document;
+    let service, document, theme, variable, contr, globalCss, sty, dark, light;
+    let themeSpy, documentSpy, colorSpy;
 
-  beforeEach(() => {
-    document = DOCUMENT;
-    service = new ThemeService(document);
-    } );
+    beforeEach(() => {
+        document = DOCUMENT;
+        theme = Promise.resolve();
+        variable = Promise.resolve();
+        contr = Promise.resolve();
+        globalCss = Promise.resolve();
+        sty = Promise.resolve();
+        light = Promise.resolve();
+        dark = Promise.resolve();
 
-  it('should be created', () => {
-    service = TestBed.get(ThemeService);
-    expect(service).toBeTruthy();
-  });
+        themeSpy = jasmine.createSpyObj('ThemeService', {
+            setTheme: theme,
+            setVariable: variable,
+            contrast: contr,
+            setGlobalCSS: globalCss
+        });
+
+        documentSpy = jasmine.createSpyObj('document', {
+            style: sty
+        });
+
+        colorSpy = jasmine.createSpyObj('Color', {
+            Lighten: light,
+            darken: dark
+        });
+
+        service = new ThemeService(documentSpy);
+    });
+
+    it('should be created', () => {
+        service = TestBed.get(ThemeService);
+        expect(service).toBeTruthy();
+    });
+
+    it('should call setGlobalCSS', () => {
+        service.setVariable('a', 'b').then(() => {
+            expect(documentSpy.style).toHaveBeenCalled();
+        }).catch(() => {
+            fail();
+        });
+    });
 
 });
