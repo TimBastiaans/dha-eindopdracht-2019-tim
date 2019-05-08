@@ -42,12 +42,4 @@ describe('ThemeService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('should call setGlobalCSS', () => {
-        service.setVariable('a', 'b').then(() => {
-            expect(documentSpy.style).toHaveBeenCalled();
-        }).catch(() => {
-            fail();
-        });
-    });
-
 });
