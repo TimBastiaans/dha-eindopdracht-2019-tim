@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ErrorService} from '../services/error.service';
 import {DataService} from '../services/data.service';
+import {Platform} from '@ionic/angular';
 
 @Component({
   selector: 'app-error-handler',
@@ -11,9 +12,11 @@ export class ErrorHandlerComponent implements OnInit {
   errorMessage: string[];
   fontSize: number;
   @Input() dateOfToday: Date;
+  @Output() close: EventEmitter<string> = new EventEmitter();
 
   constructor(private errorService: ErrorService,
-              private dataService: DataService) {
+              private dataService: DataService,
+              public platform: Platform) {
 
     this.dataService.currentFontSize.subscribe(fontSize => this.fontSize = fontSize);
     this.errorService.currentErrors.subscribe(error => this.errorMessage = error);
@@ -21,7 +24,12 @@ export class ErrorHandlerComponent implements OnInit {
 
   ngOnInit() {}
 
-  removeError(error: string) {
+  removeError2(error: string) {
     this.errorService.removeError(error);
   }
+
+  removeError(error: string) {
+    this.close.emit(error);
+  }
 }
+

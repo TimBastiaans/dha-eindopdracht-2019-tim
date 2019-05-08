@@ -1,7 +1,7 @@
 <ion-list *ngIf="errorMessage.length > 1">
   <ion-row>
     <ion-col class="dateOfToday" sizeXs="12" sizeLg="6" pushLg="3">
-      {{dateOfToday | date:'dd-MM-yyyy'}}
+
     </ion-col>
   </ion-row>
   <ion-row *ngFor=" let error of errorMessage; let i = index">
@@ -10,11 +10,13 @@
         <ion-button (click)="removeError(error)" color="danger" [ngStyle]="{'font-size': fontSize + 'px'}" class="removeButton">
           X
         </ion-button>
-        <ion-label no-margin [ngStyle]="{'font-size': fontSize + 'px'}">
-          {{ error }}
-        </ion-label>
+            <ion-label (click)="removeError(error)" class="hide-sm"  no-margin [ngStyle]="{'font-size': fontSize + 'px'}">
+              {{dateOfToday | date:'dd-MM-yyyy HH:mm:ss |'}} {{ error }}
+            </ion-label>
+            <ion-label (click)="removeError(error)" class="hide-lg" no-margin [ngStyle]="{'font-size': fontSize + 'px'}">
+              {{dateOfToday | date:'HH:mm |'}} {{ error }}
+            </ion-label>
       </ion-item>
     </ion-col>
   </ion-row>
 </ion-list>
-

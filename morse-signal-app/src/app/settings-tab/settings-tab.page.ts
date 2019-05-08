@@ -68,6 +68,10 @@ export class SettingsTabPage {
                 (error) => console.log(error),
             );
     }
+
+    onRemovedError(error: string) {
+        this.errorService.removeError(error);
+    }
 }
 
 

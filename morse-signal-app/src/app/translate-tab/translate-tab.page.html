@@ -51,6 +51,6 @@
                 </ion-button>
             </ion-col>
         </ion-row>
-        <app-error-handler [dateOfToday]="theDate"></app-error-handler>
+        <app-error-handler (close)="onRemovedError($event)" [dateOfToday]="theDate"></app-error-handler>
     </ion-grid>
 </ion-content>
