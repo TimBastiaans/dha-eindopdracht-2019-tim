@@ -5,10 +5,10 @@ import {TranslateTabPage} from './translate-tab.page';
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
-import {DataService} from '../services/data.service';
-import {ThemeService} from '../services/theme.service';
+import {DataService} from '../services/data/data.service';
+import {ThemeService} from '../services/theme/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
-import {TranslationService} from '../services/translation.service';
+import {TranslationService} from '../services/translation/translation.service';
 
 @Injectable()
 class MockDataService {

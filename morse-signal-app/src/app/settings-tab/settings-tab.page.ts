@@ -1,9 +1,9 @@
 /* tslint:disable:no-trailing-whitespace */
 import {Component} from '@angular/core';
-import {DataService} from '../services/data.service';
-import {ThemeService} from '../services/theme.service';
+import {DataService} from '../services/data/data.service';
+import {ThemeService} from '../services/theme/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
-import {ErrorService} from '../services/error.service';
+import {ErrorService} from '../services/error/error.service';
 
 @Component({
     selector: 'app-settings-tab',

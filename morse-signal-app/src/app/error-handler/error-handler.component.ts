@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ErrorService} from '../services/error.service';
-import {DataService} from '../services/data.service';
+import {ErrorService} from '../services/error/error.service';
+import {DataService} from '../services/data/data.service';
 import {Platform} from '@ionic/angular';
 
 @Component({
@@ -23,10 +23,6 @@ export class ErrorHandlerComponent implements OnInit {
   }
 
   ngOnInit() {}
-
-  removeError2(error: string) {
-    this.errorService.removeError(error);
-  }
 
   removeError(error: string) {
     this.close.emit(error);

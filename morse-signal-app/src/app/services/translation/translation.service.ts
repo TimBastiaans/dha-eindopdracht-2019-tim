@@ -2,7 +2,7 @@
 import {Injectable} from '@angular/core';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
 import {HTTP} from '@ionic-native/http/ngx';
-import {ErrorService} from './error.service';
+import {ErrorService} from '../error/error.service';
 import {Platform} from '@ionic/angular';
 
 @Injectable({
@@ -57,7 +57,7 @@ export class TranslationService {
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                  if (this.platform.is('android') && !this.platform.is('ios')) {
+                  if (!this.platform.is('android') && !this.platform.is('ios')) {
                        this.errorService.addError('Camera Flash is not available.');
                    } else {
                         await this.flash(this.translation);

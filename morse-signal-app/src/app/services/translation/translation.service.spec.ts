@@ -75,22 +75,6 @@ describe('TranslationService', () => {
         });
     });
 
-    it('should run #translate()', async () => {
-        spyOn(service.translate('a', 'morse'), 'catch');
-        service.translate('a', 'morse');
-        expect(service.translate('a', 'morse').catch(() => {
-            fail();
-        }));
-    });
-
-    it('should run #translateText()', async () => {
-        spyOn(service.translateText('a', 'morse'), 'catch');
-        service.translateText('a', 'morse');
-        expect(service.translateText('a', 'morse').catch(() => {
-            fail();
-        }));
-    });
-
     it('should run #flashTimer() when calling #translate()', async () => {
         service.translate('a', ' morse').then(() => {
             expect(service.flashTimer).toBeTruthy();
