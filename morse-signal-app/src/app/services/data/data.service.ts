@@ -10,6 +10,7 @@ export class DataService {
   currentFontSize = this.fontSizeSource.asObservable();
 
   constructor() { }
+
   changeFontSize(size: number) {
     this.fontSizeSource.next(size);
   }

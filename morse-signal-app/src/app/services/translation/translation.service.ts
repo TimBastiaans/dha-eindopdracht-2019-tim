@@ -1,13 +1,14 @@
 /* tslint:disable:no-trailing-whitespace */
 import {Injectable} from '@angular/core';
 import {Flashlight} from '@ionic-native/flashlight/ngx';
-import {HTTP} from '@ionic-native/http/ngx';
+import {HttpClient} from '@angular/common/http';
 import {ErrorService} from '../error/error.service';
 import {Platform} from '@ionic/angular';
 
 @Injectable({
     providedIn: 'root'
 })
+
 export class TranslationService {
     private _morseUnitInterval: number;
     private _fontSize: number;
@@ -35,7 +36,7 @@ export class TranslationService {
         this._translation = value;
     }
 
-    constructor(private flashlight: Flashlight, private http: HTTP, private errorService: ErrorService, private platform: Platform) {
+    constructor(private flashlight: Flashlight, private http: HttpClient, private errorService: ErrorService, private platform: Platform) {
         this.fontSize = 16;
         this.morseUnitInterval = 250;
     }
@@ -52,12 +53,13 @@ export class TranslationService {
         await this.http
             .post('https://api.funtranslations.com/translate/' + chosenLanguage.toLowerCase() + '.json',
                 {'text': textToTranslate}, {})
+            .toPromise()
             .then(async translation => {
                 const json = translation['data'];
                 const obj = JSON.parse(json);
                 this.translation = await obj.contents.translated;
                 if (chosenLanguage.toLocaleLowerCase() === 'morse') {
-                  if (!this.platform.is('android') && !this.platform.is('ios')) {
+                  if (!this.platform.is('android') || !this.platform.is('ios')) {
                        this.errorService.addError('Camera Flash is not available.');
                    } else {
                         await this.flash(this.translation);

@@ -13,6 +13,10 @@ import {ThemeService} from './services/theme/theme.service';
 import {DataService} from './services/data/data.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {ScreenOrientation} from '@ionic-native/screen-orientation/ngx';
+import {Flashlight} from "@ionic-native/flashlight/ngx";
+import {SpeechRecognition} from "@ionic-native/speech-recognition/ngx";
+
+
 
 @NgModule({
     declarations: [AppComponent],
@@ -25,6 +29,8 @@ import {ScreenOrientation} from '@ionic-native/screen-orientation/ngx';
         DataService,
         NativeStorage,
         ScreenOrientation,
+        Flashlight,
+        SpeechRecognition,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]

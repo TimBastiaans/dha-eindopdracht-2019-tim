@@ -1,17 +1,18 @@
 /* tslint:disable:no-trailing-whitespace */
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {SpeechRecognition} from '@ionic-native/speech-recognition/ngx';
-import {Flashlight} from '@ionic-native/flashlight/ngx';
-import {HTTP} from '@ionic-native/http/ngx';
+import {Flashlight} from '@ionic-native/flashlight/ngx';;
 import {DataService} from '../services/data/data.service';
 import {ThemeService} from '../services/theme/theme.service';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
 import {TranslationService} from '../services/translation/translation.service';
 import {ErrorService} from '../services/error/error.service';
+import {HttpClient} from "@angular/common/http";
+
 
 @Component({
-    selector: 'app-translate-tab',
     templateUrl: 'translate-tab.page.html',
+    selector: 'app-translate-tab',
     styleUrls: ['translate-tab.page.scss']
 })
 export class TranslateTabPage implements OnInit {
@@ -80,7 +81,7 @@ export class TranslateTabPage implements OnInit {
         this._displayText = value;
     }
 
-    constructor(private speechRecognition: SpeechRecognition, private flashlight: Flashlight, private http: HTTP,
+    constructor(private speechRecognition: SpeechRecognition, private flashlight: Flashlight, private http: HttpClient,
                 private data: DataService, private theme: ThemeService, private nativeStorage: NativeStorage,
                 private translationService: TranslationService, private errorService: ErrorService) {
     }
