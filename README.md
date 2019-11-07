@@ -42,8 +42,6 @@ Download the zip from Github or clone the project.
 After cloning or downloading the project run the code below in the terminal.
 
 - `npm install`
-- `ionic cordova plugin add cordova-plugin-advanced-http`
-- `ionic cordova plugin add cordova-plugin-speechrecognition`
 
 To run the application in the browser run the code below in the terminal.
 
